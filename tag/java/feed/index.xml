@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Java &#8211; Clavrit</title>
+	<atom:link href="/tag/java/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description></description>
+	<lastBuildDate>Sat, 20 Apr 2024 04:56:29 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.5.2</generator>
+	<item>
+		<title>Reactive programming through Java</title>
+		<link>/2024/04/12/reactive-programming-through-java/</link>
+					<comments>/2024/04/12/reactive-programming-through-java/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Fri, 12 Apr 2024 09:26:31 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[Java]]></category>
+		<guid isPermaLink="false">/?p=1298</guid>
+
+					<description><![CDATA[Reactive programming is a developer paradigm focused on creating applications that are responsive to changes, asynchronous in nature, and driven [&#8230;]]]></description>
+										<content:encoded><![CDATA[<div class="article-post">
+<p>Reactive programming is a developer paradigm focused on creating applications that are responsive to changes, asynchronous in nature, and driven by events. It emphasizes handling data streams and events as first-class citizens, enabling developers to write more efficient, scalable, and resilient code. Java reactive programming is a programming approach that emphasizes the development of applications that are both responsive and scalable, capable of handling both concurrent and asynchronous operations effectively.</p>
+<h3>Terms need to know:</h3>
+<p><span class="abc">Producer:</span>The producer acts as a data source and it will publish events.<br />
+<span class="abc">Subscriber:</span> It listens to the events from the producer, it subscribes and consumes those events.<br />
+<span class="abc">Processor:</span> It acts as a middleman that connects publisher to subscriber.<br />
+<span class="abc">Stream:</span> It is a series of events that are ordered in time. A stream can emit three different types of signals: A value of a certain type, an error, or a completed signal.<br />
+<span class="abc">Reactive Streams:</span> A standard for asynchronous stream processing with non-blocking backpressure.<br />
+<span class="abc">Flux and Mono:</span> Specific types of observables provided by Project Reactor for handling streams of data. Flux represents a stream of multiple items, while Mono represents a stream of at most one item.<br />
+<span class="abc">Backpressure:</span> The mechanism used to handle situations where the rate of data production exceeds the rate of data consumption.<br />
+<span class="abc">Asynchronous Data Stream:</span> A stream of data that emits values one at a time with a delay between them is known as an asynchronous data stream.</p>
+<p>&nbsp;</p>
+<h3>Core features of Reactive Programming:</h3>
+<ul>
+<li>New programming Paradigm</li>
+<li>Asynchronous and non-blocking</li>
+<li>Functional style code</li>
+<li>Data flow as event driven Stream</li>
+<li>Backpressure on data streams</li>
+</ul>
+<h3>Why we required Reactive Programming :</h3>
+<p><span class="abc">Inherently Lazy Execution:</span> Reactive programming promotes laziness, meaning computations don&#8217;t occur until there&#8217;s a subscriber. This &#8220;stop &amp; play&#8221; capability allows for more efficient resource utilization and responsive applications.<br />
+<span class="abc">Concise Code:</span> By focusing on modelling events and their dependencies, reactive programming often results in more compact implementations. Developers spend less time on implementation details and more on understanding the overall flow of events.<br />
+<span class="abc">Less Code To Write:</span> With libraries like RxJS providing built-in operators for common behaviours (e.g., debouncing, throttling), developers spend less time implementing these functionalities from scratch. This leads to reduced development time and more maintainable codebases.<br />
+<span class="abc">Effortless Cancellation:</span> Reactive programming simplifies cancellation mechanisms, making it easy to cancel on going operations. This capability is particularly useful in scenarios where users need to abort or change their requests or actions.</p>
+<p>&nbsp;</p>
+<h3>How Reactive Programming working with Java:</h3>
+<p>In Java, reactive programming is often implemented using libraries such as Reactive Streams, Project Reactor, and RxJava, which provide APIs for writing reactive code. These libraries allow developers to handle streams of data and events asynchronously, using concepts such as Observables, Observers, and Streams, and applying operators for processing and transforming data in a reactive and non-blocking manner.</p>
+<p><span class="abc">Project Reactor:</span> Developed by the Spring team, Project Reactor is a reactive programming library for building non-blocking applications on the JVM. It provides support for reactive streams, asynchronous operations, and reactive data processing.<br />
+<span class="abc">RxJava:</span> RxJava is a reactive extension library for Java that implements the ReactiveX API. It allows developers to work with asynchronous data streams and provides operators for composing and transforming streams of data in a declarative and functional style.</p>
+<h3>Example:</h3>
+<h4>Basic Crud operation using Java Reactive programming:</h4>
+<h5>Entity:</h5>
+<pre>@Table("products")
+public class Product {
+
+	@Id
+	private Long id;
+	private String name;
+	private String description;
+	private double value;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public double getValue() {
+		return value;
+	}
+
+	public void setValue(double value) {
+		this.value = value;
+	}
+
+	public Product() {
+		super();
+	}
+
+	public Product(Long id, String name, String description, double value) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.value = value;
+	}
+}
+
+</pre>
+<h5>Controller:</h5>
+<pre>@RestController
+public class ProductController {
+
+	@Autowired
+	ProductService productService;
+
+	@GetMapping("/allproducts")
+
+	public Flux getAllProducts() {
+		return productService.getAllProducts();
+	}
+
+	@GetMapping("/getproductbyid/{id}")
+	public Mono getProductById(@PathVariable Long id) {
+		return productService.getProductById(id);
+	}
+
+	@DeleteMapping("/deleteproductbyid{id}")
+	public Mono deleteProductById(@PathVariable Long id) {
+		return productService.deleteProduct(id);
+	}
+
+	@PostMapping("/saveproduct")
+	public Mono saveProduct(@RequestBody Product product) {
+
+		return productService.saveProduct(product);
+	}
+
+}
+
+</pre>
+<h5>Repository:</h5>
+<pre>import org.springframework.data.repository.reactive.ReactiveCrudRepository;
+
+public interface ProductRepository extends ReactiveCrudRepository&lt;product, long=""&gt; {
+
+}
+&lt;/product,&gt;</pre>
+<h5>Service:</h5>
+<pre>@Service
+public class ProductService {
+ 
+	@Autowired
+	ProductRepository productRepository;
+ 
+	public Flux getAllProducts() {
+		return productRepository.findAll();
+	}
+ 
+	public Mono getProductById(Long id) {
+		return productRepository.findById(id);
+	}
+ 
+	public Mono deleteProduct(Long id) {
+		return productRepository.deleteById(id);
+	}
+	
+	 public Mono saveProduct(Product product) {
+	      
+	        product.setId(null);
+	        return productRepository.save(product);
+	    }
+ 
+}
+
+</pre>
+<h5>Pom.xml:</h5>
+<pre></pre>
+<h5>Application.properties:</h5>
+<pre>spring.r2dbc.url=r2dbc:mysql://localhost:3306/reactive
+spring.r2dbc.username=root
+spring.r2dbc.password=root
+
+logging.level.org.springframework.data.repository=DEBUG
+logging.level.org.springframework.r2dbc.core=DEBUG
+
+</pre>
+<h5>Output:</h5>
+<p><img fetchpriority="high" decoding="async" class="alignnone wp-image-2236 size-full" src="/wp-content/uploads/2024/04/output1.jpg" alt="" width="1326" height="494" srcset="/wp-content/uploads/2024/04/output1.jpg 1326w, /wp-content/uploads/2024/04/output1-300x112.jpg 300w, /wp-content/uploads/2024/04/output1-1024x381.jpg 1024w, /wp-content/uploads/2024/04/output1-768x286.jpg 768w" sizes="(max-width: 1326px) 100vw, 1326px" /></p>
+<p><img decoding="async" class="alignnone wp-image-2235 size-full" src="/wp-content/uploads/2024/04/output2.jpg" alt="" width="1326" height="545" srcset="/wp-content/uploads/2024/04/output2.jpg 1326w, /wp-content/uploads/2024/04/output2-300x123.jpg 300w, /wp-content/uploads/2024/04/output2-1024x421.jpg 1024w, /wp-content/uploads/2024/04/output2-768x316.jpg 768w" sizes="(max-width: 1326px) 100vw, 1326px" /></p>
+<p>&nbsp;</p>
+<h3>Steps:</h3>
+<p><span class="abc">Step 1:</span> Add required dependencies in pom.xml file.<br />
+<span class="abc">Step 2:</span> Create a product entity with required fields.<br />
+<span class="abc">Step 3:</span> Create a ProductRepository by extending ReactiveCrudRepository.<br />
+<span class="abc">Step 4:</span> Create a ProductService and manage operations related to products.<br />
+<span class="abc">Step 5:</span> Create a ProductController to handle client request related to products.<br />
+<span class="abc">Step 6:</span> Configure the properties file for Database connectivity.</p>
+<p>&nbsp;</p>
+<h3>Higly usage area’s of Reactive programming:</h3>
+<p><span class="abc">Web Development:</span> Java reactive programming is a great approach when you aim to build websites that need to work with asynchronous, non-blocking, and concurrent requests.<br />
+<span class="abc">IoT(Internet of things):</span> Reactive programming is a great tool for handling all the data streams from IoT devices. Since data generated from IoT devices is large, the responsive and flexible character of reactive programming makes it suitable for handling it.<br />
+<span class="abc">Mobile Development:</span> Mobile app development, particularly for real-time applications and games, benefits from reactive programming. Libraries such as RxJava for Android and RxSwift for iOS enable developers to handle asynchronous tasks, manage data streams, and create responsive user experiences.</p>
+<p>&nbsp;</p>
+<h3>Conclusion:</h3>
+<p>Java reactive programming is a great tool for building robust, scalable, and responsive modern applications. It is natural for developers to experiment with new programming paradigms and strive for further development.</p>
+</div>
+<div class="after-post-tags">
+<ul class="tags">
+<li>Design</li>
+<li>Growth Mindset</li>
+<li>Productivity</li>
+<li>Personal Growth</li>
+</ul>
+</div>
+]]></content:encoded>
+					
+					<wfw:commentRss>/2024/04/12/reactive-programming-through-java/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

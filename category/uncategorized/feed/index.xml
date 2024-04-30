@@ -1,0 +1,1262 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Uncategorized &#8211; Clavrit</title>
+	<atom:link href="/category/uncategorized/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description></description>
+	<lastBuildDate>Sat, 20 Apr 2024 05:03:00 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.5.2</generator>
+	<item>
+		<title>End-to-End Testing in Web Applications: A Comprehensive Guide</title>
+		<link>/2024/04/19/end-to-end-testing-in-web-applications-a-comprehensive-guide/</link>
+					<comments>/2024/04/19/end-to-end-testing-in-web-applications-a-comprehensive-guide/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Fri, 19 Apr 2024 08:34:11 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[Testing]]></category>
+		<guid isPermaLink="false">/?p=2179</guid>
+
+					<description><![CDATA[In today&#8217;s rapidly evolving digital landscape, ensuring the reliability and functionality of web applications is paramount. End-to-end testing plays a [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>In today&#8217;s rapidly evolving digital landscape, ensuring the reliability and functionality of web applications is paramount. End-to-end testing plays a crucial role in validating the performance and user experience of these applications across various scenarios. In this comprehensive guide, we will delve into the fundamentals of end-to-end testing, its importance, best practices, and tools to streamline the process.</p>
+<h3>Understanding End-to-End Testing</h3>
+<p>End-to-end testing is a testing methodology that evaluates the entire software application from start to finish, simulating real user scenarios. Unlike unit or integration testing, which focuses on individual components or modules, end-to-end testing assesses the application&#8217;s behaviour across multiple layers, including the frontend interface, backend logic, and interactions with external systems such as databases and APIs.</p>
+<h3>Benefits of End-to-End Testing</h3>
+<p>• <span class="abc">quality assurance:</span> End-to-end testing can help ensure that all parts of a software application are working together correctly and that the application is meeting its intended business requirements.<br />
+• <span class="abc">Increased confidence in the software:</span> End-to-end testing can help increase the confidence that the software will function as expected in real-world scenarios, giving assurance to stakeholders that the application is reliable and stable.<br />
+• <span class="abc">Faster detection of defects:</span> End-to-end testing can help detect defects early in the development cycle, allowing developers to fix the issues before they become more difficult and costly to resolve.<br />
+• <span class="abc">Reduced costs:</span> End-to-end testing can help reduce the costs associated with defects and bugs detected late in the development cycle or after the application has been deployed.<br />
+• <span class="abc">Better alignment with business requirements:</span> End-to-end testing can help ensure that the application meets the business requirements, making it more likely that the application will be accepted by its intended users.<br />
+• <span class="abc">More efficient testing process:</span> End-to-end testing can help streamline the testing process by testing the application from a user’s perspective, rather than testing individual components in isolation, making it easier to identify and address issues that may arise.<br />
+Overall, end-to-end testing is an essential practice for ensuring the quality, reliability, and usability of software applications.</p>
+<h4>What is the E2E Testing Life Cycle?</h4>
+<p>The end-to-end testing life cycle consists of several phases that ensure a comprehensive approach to testing an entire software application from start to finish—here are the key phases of the E2E testing life cycle.<br />
+• <span class="abc">Test Planning:</span> After integration testing, define test objectives based on customer requirements and application architecture.<br />
+• <span class="abc">Test Design:</span> Set up the test environment, conduct risk and usage analysis, and create test cases, possibly using automation testing tools.<br />
+• <span class="abc">Test Execution:</span> Execute test cases, both locally and remotely, monitoring progress and consistency with the test plan.<br />
+• <span class="abc">Results Analysis:</span> Analyse test results, identify the root cause of bugs, and relay findings to the development team for resolution.</p>
+<p><img fetchpriority="high" decoding="async" class="alignnone wp-image-2180 size-full" src="/wp-content/uploads/2024/04/testing2.jpg" alt="" width="1600" height="586" srcset="/wp-content/uploads/2024/04/testing2.jpg 1600w, /wp-content/uploads/2024/04/testing2-300x110.jpg 300w, /wp-content/uploads/2024/04/testing2-1024x375.jpg 1024w, /wp-content/uploads/2024/04/testing2-768x281.jpg 768w, /wp-content/uploads/2024/04/testing2-1536x563.jpg 1536w" sizes="(max-width: 1600px) 100vw, 1600px" /></p>
+<h4>Steps to Perform End-to-End Testing</h4>
+<p>The steps below are required to initiate and complete any E2E test.<br />
+• Analyse requirements. Have a clear idea of how the app is supposed to work in every aspect.<br />
+• Set up a test environment in alignment with all the requirements<br />
+• Analyse software and hardware requirements<br />
+• List down how every system needs to respond<br />
+• List down testing methods required to test these responses. Include clear descriptions of standards (language, tools, etc.) to be followed in each test.<br />
+• Design test cases<br />
+• Run tests, study, and save results</p>
+<h4>End-to-End Testing Example</h4>
+<p>Let’s say testers have to verify the functioning of a Gmail account. The following features have to be tested:<br />
+• Type the URL into the address bar to launch the Gmail login page.<br />
+• Log into the account with valid credentials.<br />
+• Access Inbox. Open Read and Unread emails.<br />
+• Compose a new email.<br />
+• Reply to and forward an existing email.<br />
+• Open the Sent Items folder. Check emails there.<br />
+• Open the Spam folder. Check emails there.<br />
+• Log out of Gmail by clicking ‘logout’.</p>
+<h4>Main Challenges in End-to-End Testing</h4>
+<p>Naturally, detecting bugs in a complex workflow entails challenges. The two major ones are explained below:<br />
+• <span class="abc">Creating workflows:</span> To examine an app’s workflow, test cases in an E2E test suite must be run in a particular sequence. This sequence must match the path of the end-user as they navigate through the app. Creating test suites to match this workflow can be taxing, especially since they usually involve creating and running thousands of tests.<br />
+• <span class="abc">Accessing Test Environment:</span> It is easy to test apps in dev environments. However, every application has to be tested in client or production environments. Chances are that prod environments are not always available for testing. Testers must install local agents and log into virtual machines even when they are. Testers must also prepare for and prevent issues like system updates that might interrupt test execution. The best way to access an ideal test environment is to test on a real device cloud.</p>
+<h4>Conclusion</h4>
+<p>End-to-end testing is essential for assessing user interaction with your software applications. Evaluating the user experience from beginning to end provides more assurance regarding the quality of your application than simply testing if a button function or a model appears. By implementing a well-defined end-to-end testing strategy, you can significantly improve the quality of your software and deliver a superior user experience. This comprehensive guide has provided you with a solid understanding of end-to-end testing concepts, implementation methods, and available resources.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/2024/04/19/end-to-end-testing-in-web-applications-a-comprehensive-guide/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Unravelling the Mysteries of Performance Testing in Software Development</title>
+		<link>/2024/04/19/unravelling-the-mysteries-of-performance-testing-in-software-development/</link>
+					<comments>/2024/04/19/unravelling-the-mysteries-of-performance-testing-in-software-development/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Fri, 19 Apr 2024 08:31:03 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[Testing]]></category>
+		<guid isPermaLink="false">/?p=2175</guid>
+
+					<description><![CDATA[Performance testing in software development is a crucial aspect that often remains shrouded in mystery for many developers and organisations. [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>Performance testing in software development is a crucial aspect that often remains shrouded in mystery for many developers and organisations. However, understanding its principles and practices is essential for delivering high-quality software that meets user expectations. Let&#8217;s unravel the mysteries surrounding performance testing:</p>
+<h4><b>Definition:</b></h4>
+<p>Performance testing is the process of evaluating the speed, responsiveness, stability, and scalability of a software application under various workloads.</p>
+<p>&nbsp;</p>
+<h3>Types of Performance Testing:</h3>
+<p><span class="abc">Load Testing:</span>Assessing how the system behaves under expected loads.</p>
+<p><span class="abc">Stress Testing:</span> Evaluating system behaviour beyond normal operational capacity, often to the point of failure.</p>
+<p><span class="abc">Endurance Testing:</span> Ensuring the system can handle expected loads over a prolonged period.</p>
+<p><span class="abc">Scalability Testing:</span> Determining how well the system scales with increasing load signal.</p>
+<p><span class="abc">Volume Testing:</span> Testing the system with large volumes of data to assess its performance.</p>
+<p><img decoding="async" class="alignnone wp-image-2176 size-full" src="/wp-content/uploads/2024/04/PerformanceTesting.png" alt="" width="394" height="378" srcset="/wp-content/uploads/2024/04/PerformanceTesting.png 394w, /wp-content/uploads/2024/04/PerformanceTesting-300x288.png 300w" sizes="(max-width: 394px) 100vw, 394px" /></p>
+<h3>Key Metrics:</h3>
+<p><span class="abc">Response Time: </span>The time taken by the system to respond to a user request.</p>
+<p><span class="abc">Throughput:</span> The number of transactions processed by the system per unit of time.</p>
+<p><span class="abc">Resource Utilization:</span> Monitoring CPU, memory, disk I/O, and network usage.</p>
+<p><span class="abc">Error Rate: </span>The rate of errors encountered during testing.</p>
+<h3>Tools and Technologies:</h3>
+<p><span class="abc">Load Testing Tools:</span>JMeter, LoadRunner, Gatling, Apache Bench.</p>
+<p><span class="abc">Profiling Tools: </span>Visual, Your Kit, AppDynamics, New Relic.</p>
+<p><span class="abc">Monitoring Tools: </span>Prometheus, Grafana, Nagios, Datadog.</p>
+<p><span class="abc">Test Environment Setup:</span>Replicate production-like environments. Use realistic data and traffic patterns. Emulate network conditions to simulate real-world scenarios.</p>
+<h3>Test Scenarios:</h3>
+<p>Identify critical user flows. Define expected load patterns. Consider peak usage times and seasonal variations.</p>
+<h4>Interpreting Results:</h4>
+<p>Compare against predefined benchmarks. Analyse trends over time. Identify bottlenecks and performance degradation.</p>
+<h4>Importance of Automation:</h4>
+<p>Automate test scenarios for repeatability and consistency. Continuous integration and delivery pipelines should include performance tests.</p>
+<h4>Collaboration and Communication:</h4>
+<p>Involve stakeholders early in the performance testing process. Share findings transparently to align expectations and priorities.</p>
+<h4>Continuous Improvement:</h4>
+<p>Use performance testing results to guide optimisation efforts. Iterate test scenarios based on evolving user needs and usage patterns. By demystifying performance testing and integrating it into the software development lifecycle, teams can proactively address performance issues, enhance user experience, and build robust, scalable applications.</p>
+<h4>Let&#8217;s consider an e-commerce website as a real-time example of performance testing.</h4>
+<h3>Scenario:</h3>
+<p>Imagine you&#8217;re working for a company that operates an e-commerce platform where users can browse products, add them to their cart, and complete purchases. As the holiday season approaches, the company expects a surge in traffic due to increased online shopping activity. Your task is to conduct performance testing to ensure the website can handle the anticipated load without compromising user experience.</p>
+<h3>Performance Testing Approach:</h3>
+<p><span class="abc"><b>Load Testing:</b></span> Simulate a large number of virtual users accessing the website simultaneously.Vary the load to mimic different scenarios, such as peak shopping hours and promotional events.Measure response times, throughput, and server resource utilization under various load conditions.</p>
+<p><span class="abc"><b>Stress Testing:</b> </span>Gradually increase the load beyond normal capacity to determine the breaking point. Monitor system behaviour and identify performance bottlenecks, such as slow page load times or server errors. Assess how the website recovers from stress and whether it gracefully degrades under extreme loads.</p>
+<p><span class="abc"><b>Endurance Testing:</b> </span>Run tests continuously over an extended period to ensure the website can sustain high traffic levels without performance degradation. Monitor for memory leaks, database connection issues, or other issues that may arise over time.</p>
+<p><span class="abc"><b>Scalability Testing: </b></span>Evaluate how the website scales with increasing load by adding more servers or resources. Determine the optimal configuration to handle peak loads efficiently without over-provisioning.</p>
+<h3>Results and Analysis:</h3>
+<p><span class="abc"><b>Response Time: </b></span>Ensure that pages load quickly and transactions are processed within acceptable time frames. Identify any slow-performing pages or actions that may impact user experience.</p>
+<p><span class="abc"><b>Throughput:</b></span> Measure the number of transactions processed per second to ensure the system can handle the expected load.</p>
+<p><span class="abc"><b>Server Resource Utilization:</b></span>Monitor CPU, memory, disk I/O, and network usage to identify resource bottlenecks. Optimize server configurations or allocate additional resources as needed.</p>
+<p><span class="abc"><b>Error Rate: </b></span>Monitor for server errors, timeouts, or other issues that may arise under heavy load. Investigate the root cause of errors and implement fixes to improve system stability.</p>
+<h3>Conclusion:</h3>
+<p>By conducting performance testing on the e-commerce website, you can ensure that it can handle the anticipated increase in traffic during the holiday season without experiencing slowdowns or downtime. This proactive approach helps maintain a positive user experience, minimize revenue loss due to performance issues, and build trust and loyalty among customers.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/2024/04/19/unravelling-the-mysteries-of-performance-testing-in-software-development/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Localization and LP table in SAP Commerce</title>
+		<link>/2024/04/19/localization-and-lp-table-in-sap-commerce/</link>
+					<comments>/2024/04/19/localization-and-lp-table-in-sap-commerce/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Fri, 19 Apr 2024 07:29:30 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[SAP Commerce]]></category>
+		<guid isPermaLink="false">/?p=2140</guid>
+
+					<description><![CDATA[In SAP Hybris Commerce, “localization” refers to the capability of managing data for different locales, languages, and countries. This is [&#8230;]]]></description>
+										<content:encoded><![CDATA[<div class="mainheading"></div>
+<p>In SAP Hybris Commerce, “localization” refers to the capability of managing data for different locales, languages, and countries. This is particularly important for global businesses that need to provide content, products, and services tailored to specific regions across the globe.</p>
+<p>Internally whenever we creating any item type and in that any one of the attribute is localized then the corresponding LP (Localized Property) table will be created. The Localized Property (LP) table is a mechanism in Hybris that enables the localization of attributes within an item type. It is used to store values for a specific attribute based on different languages or locales. Each item type having any of the attributes that needs to be localized has a corresponding LP table to store the localized values.</p>
+<h5>In this article we will go through two implementations:</h5>
+<p>1. Create a new itemtype with three attributes, and one of the attribute is localized. And validate it using Administrative Console (HAC) and Backoffice.</p>
+<p>2. Add a new localized attribute in product itemtype and display the same on storefront.</p>
+<h3>Implementation 1:</h3>
+<h4>1.First we need to create one itemtype in *core-items.xml file.</h4>
+<pre></pre>
+<p>After performing the above step do ant all (it will generate corresponding Model class (StudentModel) and start the server and, perform the system update (the corresponding table (StudentDetails) and corresponding LP (StudentDetailslp) table will be created in the Database.<br />
+For normal attributes (studentID, studentFirstName) the setters and getters will be generated and for localized attribute (studentLastName) there are two setters and getters will be created. One is for normal and another one is for Localized (having additional parameter of type Locale as highlighted in the below code snippet).</p>
+<pre>   @Accessor(qualifier = "studentID", type = Accessor.Type.GETTER)
+   public String getStudentID()
+   {
+   return getPersistenceContext().getPropertyValue(STUDENTID);
+   }
+   
+   @Accessor(qualifier = "studentID", type = Accessor.Type.SETTER)
+   public void setStudentID(final String value)
+   {
+   getPersistenceContext().setPropertyValue(STUDENTID, value);
+   }
+   
+   @Accessor(qualifier = "studentFirstName", type = Accessor.Type.GETTER)
+   public String getStudentFirstName()
+   {
+   return getPersistenceContext().getPropertyValue(STUDENTFIRSTNAME);
+   }
+   
+   @Accessor(qualifier = "studentFirstName", type = Accessor.Type.SETTER)
+   public void setStudentFirstName(final String value)
+   {
+   getPersistenceContext().setPropertyValue(STUDENTFIRSTNAME, value);
+   }
+   
+   @Accessor(qualifier = "studentLastName", type = Accessor.Type.GETTER)
+   public String getStudentLastName()
+   {
+   return getStudentLastName(null);
+   }
+   
+   @Accessor(qualifier = "studentLastName", type = Accessor.Type.SETTER)
+   public void setStudentLastName(final String value)
+   {
+   setStudentLastName(value,null);
+   }
+</pre>
+<h3>Go to Backoffice:</h3>
+<h5>Types-&gt;Type “Student” in text box and click on search:</h5>
+<p><img decoding="async" class="alignnone wp-image-2146 size-full" src="/wp-content/uploads/2024/04/H2.1.png" alt="" width="882" height="649" srcset="/wp-content/uploads/2024/04/H2.1.png 882w, /wp-content/uploads/2024/04/H2.1-300x221.png 300w, /wp-content/uploads/2024/04/H2.1-768x565.png 768w" sizes="(max-width: 882px) 100vw, 882px" /></p>
+<p>In the above image click on the highlighted symbol to open the type and show its records, and using this screen we can add the values for <span class="abc">studentID, studentFirstName and studentLastName,</span> edit , update or delete the records. Here we can observe that the below image there is additional symbol for the <span class="abc">studentLastName</span> it indicates that the attribute is localized and, When I click the below highlighted symbol we can see the text boxes for different languages. We can add the text for different languages and for the <span class="abc">studentID, studentFirstName</span> there is no symbol it means that attribute is not be localized.</p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2148 size-full" src="/wp-content/uploads/2024/04/H2.2.png" alt="" width="1104" height="635" srcset="/wp-content/uploads/2024/04/H2.2.png 1104w, /wp-content/uploads/2024/04/H2.2-300x173.png 300w, /wp-content/uploads/2024/04/H2.2-1024x589.png 1024w, /wp-content/uploads/2024/04/H2.2-768x442.png 768w" sizes="(max-width: 1104px) 100vw, 1104px" /></p>
+<p>&nbsp;</p>
+<h4>Open the HAC and write the query to get the data:</h4>
+<p><b>Select * from {Student}</b></p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2149 size-full" src="/wp-content/uploads/2024/04/H2.3.png" alt="" width="1108" height="565" srcset="/wp-content/uploads/2024/04/H2.3.png 1108w, /wp-content/uploads/2024/04/H2.3-300x153.png 300w, /wp-content/uploads/2024/04/H2.3-1024x522.png 1024w, /wp-content/uploads/2024/04/H2.3-768x392.png 768w" sizes="(max-width: 1108px) 100vw, 1108px" /></p>
+<p><b>Click on Execute we can see the results in Search result tab.</b></p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2153 size-full" src="/wp-content/uploads/2024/04/H2.4.png" alt="" width="1111" height="386" srcset="/wp-content/uploads/2024/04/H2.4.png 1111w, /wp-content/uploads/2024/04/H2.4-300x104.png 300w, /wp-content/uploads/2024/04/H2.4-1024x356.png 1024w, /wp-content/uploads/2024/04/H2.4-768x267.png 768w" sizes="(max-width: 1111px) 100vw, 1111px" /></p>
+<p>Here we can observe that two attributes are displayed here that is <span class="abc">studentID, studentFirstName</span> and not attribute which is localized that is <span class="abc">studentLastName</span>. If I want see the <span class="abc">studentLastName</span> details then go to SQL Query Tab and write the query:</p>
+<p><b>Select * from StudentDetailsl</b></p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2157 size-full" src="/wp-content/uploads/2024/04/H2.5.png" alt="" width="1116" height="424" srcset="/wp-content/uploads/2024/04/H2.5.png 1116w, /wp-content/uploads/2024/04/H2.5-300x114.png 300w, /wp-content/uploads/2024/04/H2.5-1024x389.png 1024w, /wp-content/uploads/2024/04/H2.5-768x292.png 768w" sizes="(max-width: 1116px) 100vw, 1116px" /></p>
+<p><b>Click on Execute we can see the results in Search result tab.</b></p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2158 size-full" src="/wp-content/uploads/2024/04/H2.6.png" alt="" width="1080" height="316" srcset="/wp-content/uploads/2024/04/H2.6.png 1080w, /wp-content/uploads/2024/04/H2.6-300x88.png 300w, /wp-content/uploads/2024/04/H2.6-1024x300.png 1024w, /wp-content/uploads/2024/04/H2.6-768x225.png 768w" sizes="(max-width: 1080px) 100vw, 1080px" /></p>
+<p>If we want to see both the attributes information in single query by then we need to write the same using the <span class="abc">JOIN</span> operation and it is written in SQL Query Tab.</p>
+<p><b>Select s.P_STUDENTID, s.P_STUDENTFIRSTNAME, sd.P_STUDENTLASTNAME From StudentDetails as s JOIN StudentDetailslp as sd ON s.PK = sd.ITEMPK</b></p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2159 size-full" src="/wp-content/uploads/2024/04/H2.7.png" alt="" width="1103" height="416" srcset="/wp-content/uploads/2024/04/H2.7.png 1103w, /wp-content/uploads/2024/04/H2.7-300x113.png 300w, /wp-content/uploads/2024/04/H2.7-1024x386.png 1024w, /wp-content/uploads/2024/04/H2.7-768x290.png 768w" sizes="(max-width: 1103px) 100vw, 1103px" /></p>
+<p><b>Click on Execute we can see the results in Search result Tab.</b></p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2160 size-full" src="/wp-content/uploads/2024/04/H2.8.png" alt="" width="1109" height="282" srcset="/wp-content/uploads/2024/04/H2.8.png 1109w, /wp-content/uploads/2024/04/H2.8-300x76.png 300w, /wp-content/uploads/2024/04/H2.8-1024x260.png 1024w, /wp-content/uploads/2024/04/H2.8-768x195.png 768w" sizes="(max-width: 1109px) 100vw, 1109px" /></p>
+<h3>Implementation 2:</h3>
+<h5>Add a new localized attribute in product itemtype and display the same on storefront.</h5>
+<h4>Steps for Implementation 2:</h4>
+<h5>1. Add a new localized attribute in product itemtype in *core-items.xml file.</h5>
+<pre></pre>
+<p>After performing the above step do ant all (the corresponding setter and getter methods created in ProductModel) and start the server and, do the system update (the corresponding attribute will be created in product table).</p>
+<h5>2. Add the new attribute entry in ProductData in *façades-beans.xml file.</h5>
+<pre></pre>
+<p>After performing the above step do ant all it will add new attribute in existing ProductData data class.</p>
+<h5>3. Create the populator.</h5>
+<pre></pre>
+<h5>4. Create a bean for the populator created in step 3 and add it the ProductConverter’s populator list be adding below in *facades-spring.xml file.</h5>
+<pre>	
+</pre>
+<h5>5. For display purpose in storefront we need to add the attribute in jsp file that is productDetailsPanel.tag</h5>
+<pre>	
+</pre>
+<h5>6. Go to Backoffice and add the values for that attribute in different languages.</h5>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2161 size-full" src="/wp-content/uploads/2024/04/H2.9.png" alt="" width="1346" height="650" srcset="/wp-content/uploads/2024/04/H2.9.png 1346w, /wp-content/uploads/2024/04/H2.9-300x145.png 300w, /wp-content/uploads/2024/04/H2.9-1024x495.png 1024w, /wp-content/uploads/2024/04/H2.9-768x371.png 768w" sizes="(max-width: 1346px) 100vw, 1346px" /> <img loading="lazy" decoding="async" class="alignnone wp-image-2162 size-full" src="/wp-content/uploads/2024/04/H2.10.png" alt="" width="1285" height="666" srcset="/wp-content/uploads/2024/04/H2.10.png 1285w, /wp-content/uploads/2024/04/H2.10-300x155.png 300w, /wp-content/uploads/2024/04/H2.10-1024x531.png 1024w, /wp-content/uploads/2024/04/H2.10-768x398.png 768w" sizes="(max-width: 1285px) 100vw, 1285px" /></p>
+<h4>Outputs:</h4>
+<h5>Output: English language.</h5>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2163 size-full" src="/wp-content/uploads/2024/04/H2.11.png" alt="" width="1346" height="644" srcset="/wp-content/uploads/2024/04/H2.11.png 1346w, /wp-content/uploads/2024/04/H2.11-300x144.png 300w, /wp-content/uploads/2024/04/H2.11-1024x490.png 1024w, /wp-content/uploads/2024/04/H2.11-768x367.png 768w" sizes="(max-width: 1346px) 100vw, 1346px" /></p>
+<h5>Output: German language.</h5>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2164 size-full" src="/wp-content/uploads/2024/04/H2.12.png" alt="" width="1328" height="626" srcset="/wp-content/uploads/2024/04/H2.12.png 1328w, /wp-content/uploads/2024/04/H2.12-300x141.png 300w, /wp-content/uploads/2024/04/H2.12-1024x483.png 1024w, /wp-content/uploads/2024/04/H2.12-768x362.png 768w" sizes="(max-width: 1328px) 100vw, 1328px" /></p>
+<h5>Output: Japanese language.</h5>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2165 size-full" src="/wp-content/uploads/2024/04/H2.13.png" alt="" width="1342" height="628" srcset="/wp-content/uploads/2024/04/H2.13.png 1342w, /wp-content/uploads/2024/04/H2.13-300x140.png 300w, /wp-content/uploads/2024/04/H2.13-1024x479.png 1024w, /wp-content/uploads/2024/04/H2.13-768x359.png 768w" sizes="(max-width: 1342px) 100vw, 1342px" /></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/2024/04/19/localization-and-lp-table-in-sap-commerce/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Catalog Aware Itemtype in SAP Commerce</title>
+		<link>/2024/04/19/catalog-aware-itemtype-in-sap-commerce/</link>
+					<comments>/2024/04/19/catalog-aware-itemtype-in-sap-commerce/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Fri, 19 Apr 2024 06:18:12 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[SAP Commerce]]></category>
+		<guid isPermaLink="false">/?p=2091</guid>
+
+					<description><![CDATA[The items that should take part in the synchronization process like Product, CMS Pages, and Components etc. are called Catalog Aware. [&#8230;]]]></description>
+										<content:encoded><![CDATA[<div class="mainheading"></div>
+<div class="article-post">
+<p>The items that should take part in the synchronization process like Product, CMS Pages, and Components etc. are called <b>Catalog Aware.</b></p>
+<p>The items which do (or should) not take part in synchronization process are called <b>Catalog Unaware.</b></p>
+<p>Sometimes, it is required to define our <b>custom item types</b> as <b>Catalog aware item</b> types in order to make them eligible for <b>synchronization.</b></p>
+<p>It means we need to associate these custom item types with a <b>catalog</b> (content or product).</p>
+<p>We can achieve this either in <b>HMC/Backoffice</b> or by defining required attributes in items.xml file.</p>
+<h1>Steps for creating the Catalog Aware item:-</h1>
+<p class="abc">Step1:Enable item type as catalog item type, using custom property catalogItemType.</p>
+<p class="abc">Step2: Define the attribute catalogVersionAttributeQualifier with value same as qualifier of catalogversion attribute in the same item type.</p>
+<p class="abc">Step3:Define the attribute uniqueKeyAttributeQualifier with value same as qualifier of unique attribute in the same item type and if there are multiple unique attributes then separate them by comma.</p>
+<h5>So with these steps, new item type definition in items.xml will be as below.</h5>
+<pre></pre>
+<p class="abc">After the above step do ant all (the corresponding model class will be generated) and start the server and do the system update (the corresponding table will be created in database).</p>
+<p class="abc">After that above item type is synchronizable which means source content of this item type will be copied to target automatically when we do synchronization.</p>
+<p class="abc">Now, there are some entities which should have two copies in the system, so that Business users (like content managers or product managers) can make appropriate changes to make it look suitable on the website before it actually appears there. E.g. &#8211; Product, Images etc.</p>
+<p class="abc">But there are certain items which need not to have to copies of them, E.g. &#8211; Price, Stock etc. because they would be same for both copies of the item (Product in this case) and creating another copy would be an overhead on the system.</p>
+<pre></pre>
+<p class="abc">After the above step do ant all (the corresponding attribute will be generated in the ProductModel) and start the server and do the system update (the corresponding column will be created in Product table).</p>
+<h3>Go to Backoffice:-</h3>
+<h5>Types -&gt;Type “Product” in text box and click on search:</h5>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2094 size-full" src="/wp-content/uploads/2024/04/CAware11.png" alt="" width="979" height="562" srcset="/wp-content/uploads/2024/04/CAware11.png 979w, /wp-content/uploads/2024/04/CAware11-300x172.png 300w, /wp-content/uploads/2024/04/CAware11-768x441.png 768w" sizes="(max-width: 979px) 100vw, 979px" /></p>
+<h5>Click on the above highlighted symbol you will see the list of Products</h5>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2095 size-full" src="/wp-content/uploads/2024/04/CatalogAware2.png" alt="" width="979" height="562" srcset="/wp-content/uploads/2024/04/CatalogAware2.png 979w, /wp-content/uploads/2024/04/CatalogAware2-300x172.png 300w, /wp-content/uploads/2024/04/CatalogAware2-768x441.png 768w" sizes="(max-width: 979px) 100vw, 979px" /></p>
+<h5>Search with the product id 358639 and select the staged version and in that go to the Administration tab you can see the customDescription attribute:</h5>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2098 size-full" src="/wp-content/uploads/2024/04/CatalogAware3.png" alt="" width="979" height="562" srcset="/wp-content/uploads/2024/04/CatalogAware3.png 979w, /wp-content/uploads/2024/04/CatalogAware3-300x172.png 300w, /wp-content/uploads/2024/04/CatalogAware3-768x441.png 768w" sizes="(max-width: 979px) 100vw, 979px" /></p>
+<h5>You can observe that there is no value for the customDescription attribute and we need to provide some value and click on save button after that click on sync option symbol once the synchronization is done then that attribute value is automatically reflected in online version. Why because that customDescription attribute itself catalog aware.</h5>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2099 size-full" src="/wp-content/uploads/2024/04/CatalogAware4.png" alt="" width="979" height="562" srcset="/wp-content/uploads/2024/04/CatalogAware4.png 979w, /wp-content/uploads/2024/04/CatalogAware4-300x172.png 300w, /wp-content/uploads/2024/04/CatalogAware4-768x441.png 768w" sizes="(max-width: 979px) 100vw, 979px" /></p>
+<h5>Now select the online version and see the value of customDescription attribute.</h5>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2100 size-full" src="/wp-content/uploads/2024/04/CatalogAware5.png" alt="" width="979" height="562" srcset="/wp-content/uploads/2024/04/CatalogAware5.png 979w, /wp-content/uploads/2024/04/CatalogAware5-300x172.png 300w, /wp-content/uploads/2024/04/CatalogAware5-768x441.png 768w" sizes="(max-width: 979px) 100vw, 979px" /></p>
+</div>
+]]></content:encoded>
+					
+					<wfw:commentRss>/2024/04/19/catalog-aware-itemtype-in-sap-commerce/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Dynamic Attribute in SAP Commerce</title>
+		<link>/2024/04/12/dynamic-attribute-in-sap-commerce/</link>
+					<comments>/2024/04/12/dynamic-attribute-in-sap-commerce/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Fri, 12 Apr 2024 09:44:18 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[SAP Commerce]]></category>
+		<guid isPermaLink="false">/?p=1327</guid>
+
+					<description><![CDATA[Dynamic attributes allow you to add custom attributes to your model without modifying the model class itself. They enable you [&#8230;]]]></description>
+										<content:encoded><![CDATA[<div class="article-post">
+<p>Dynamic attributes allow you to add custom attributes to your model without modifying the model class itself. They enable you to create custom logic for these attributes, which is not present in the standard model class. Dynamic attributes serve as transient data, meaning they are not stored in the database.</p>
+<p><span class="abc">When we define an <b>attribute</b> for an <b>item type,</b> it comes with a tag called <b>&#8220;persistence type&#8221;.</b></span><br />
+<span class="abc">If the persistence type is <b>set to &#8220;property&#8221;</b></span><br />
+<span class="abc">A corresponding column is created in the database.<br />
+Values assigned to this attribute will be stored in the database.<br />
+This type of attribute is called a &#8220;persistence attribute&#8221; because its values persist in the database.</span></p>
+<p><span class="abc">If the persistence type is <b>set to &#8220;dynamic&#8221;</b></span><br />
+<span class="abc">No column is created in the database.<br />
+Values assigned to this attribute will not be stored in the database.<br />
+This type of attribute is called a &#8220;non-persistent&#8221; or &#8220;dynamic&#8221; attribute because its values are not persisted in the database.</span></p>
+<p>For every dynamic attribute we define, we need to specify the attribute handler. If we don&#8217;t specify it, a Bean Id will be generated automatically. In such cases, we must use the generated Bean Id when defining the Spring bean in XML.</p>
+<p>The attribute handler is implemented using Spring. Therefore, we need to specify the Spring bean Id for the attribute handler. After that, we define a class for that Spring bean Id which provides the custom logic for the dynamic attribute. This class contains the logic for how the dynamic attribute behaves and is responsible for handling its behavior.</p>
+<h3>Example:</h3>
+<h4>Step-1:-</h4>
+<p>Define a new attributes in existing item type.<br />
+D:\Hybris2205SPA\hybris\bin\custom\clavrit\clavritcore\resources\clavritcore-items.xml</p>
+<pre>	
+</pre>
+<h4>Step-2:-</h4>
+<p>Create DynamicAttributeHandler class for handeling the newly created custom dynamic attribute.<br />
+D:\Hybris2205SPA\hybris\bin\custom\clavrit\clavritcore\src\com\clavrit\core\dynamic\DayBeforExpiryHandler.java</p>
+<pre>package com.clavrit.core.dynamic;
+
+import de.hybris.platform.servicelayer.model.attribute.DynamicAttributeHandler;
+import de.hybris.platform.voucher.model.VoucherModel;
+
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.ZoneId;
+import java.util.Date;
+
+public class DayBeforExpiryHandler implements DynamicAttributeHandler&lt;string, vouchermodel=""&gt; {
+    final public static String EXPIRY_MSG_DATE_NOT_AVAIALBLE = "Expiry data is not Available";
+    final public static String VOUCHER_EXPIRED = "Voucher Expired";
+    final public static String MONTHS = "Months :";
+    final public static String DAYS = "Days :";
+    final public static String DAY = "Day :";
+    final public static String COMMA = ", ";
+
+
+    @Override
+    public String get(VoucherModel voucherModel) {
+        Date eDate = voucherModel.getEndtDate();
+        if (eDate == null) {
+          return EXPIRY_MSG_DATE_NOT_AVAIALBLE;
+        }
+        LocalDate expiryDate = eDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        LocalDate currentDate = LocalDate.now();
+        return currentDate.isBefore(expiryDate) ? getMessage(expiryDate,currentDate) : VOUCHER_EXPIRED ;
+    }
+
+    @Override
+    public void set(VoucherModel model, String s) {
+
+    }
+
+    private String getMessage( LocalDate expiryDate , LocalDate currentDate){
+
+        Period period = Period.between(currentDate, expiryDate);
+        int daysLeft = period.getDays();
+        int monthsLeft = period.getMonths();
+        if(monthsLeft!=0){
+            return MONTHS + monthsLeft + COMMA + DAYS + daysLeft;
+        }
+        return  daysLeft==1 ? DAY + daysLeft :DAYS + daysLeft;
+    }
+}
+
+&lt;/string,&gt;</pre>
+<h4>Step-3:-</h4>
+<p>Define bean inside clavritcore-spring.xml.<br />
+D:\Hybris2205SPA\hybris\bin\custom\clavrit\clavritcore\resources\clavritcore-spring.xml</p>
+<pre>    
+</pre>
+<h4>Note:</h4>
+<p>Bean id should be same as attributeHandler mentioned in items.xml.</p>
+<h4>Step-4:-</h4>
+<p>Perform build and then update the system using HAC Or CMD</p>
+<h4>Step-5:-</h4>
+<p>Now we can check inside backoffice as I have shown below<br />
+Now set endDate in my case its is 03 April and currentDate is 02 April, we can see bellow</p>
+<p><img decoding="async" class=" img-fluid" src="https://clavrit.com/img/blog/dynamic%20attribute/backoffice1.png" alt="" width="75%" /><br />
+We can see 1 day left to expire<br />
+If it&#8217;s been more than a day, then it will show as one day.</p>
+<p><img decoding="async" class=" img-fluid" src="https://clavrit.com/img/blog/dynamic%20attribute/backoffice2.png" alt="" width="75%" /><br />
+If the expiry date exceeds 30 days, it will be changed to a month.</p>
+<p><img decoding="async" class=" img-fluid" src="https://clavrit.com/img/blog/dynamic%20attribute/backoffice3.png" alt="" width="75%" /><br />
+The code displays an expired message when it passes the set expiration date.</p>
+<p><img decoding="async" class=" img-fluid" src="https://clavrit.com/img/blog/dynamic%20attribute/backoffice4.png" alt="" width="75%" /></p>
+<p><img decoding="async" class=" img-fluid" src="https://clavrit.com/img/blog/dynamic%20attribute/backoffice5.png" alt="" width="75%" /></p>
+</div>
+]]></content:encoded>
+					
+					<wfw:commentRss>/2024/04/12/dynamic-attribute-in-sap-commerce/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Exploratory Testing: Unleashing Creativity in Quality Assurance</title>
+		<link>/2024/04/12/exploratory-testing-unleashing-creativity-in-quality-assurance/</link>
+					<comments>/2024/04/12/exploratory-testing-unleashing-creativity-in-quality-assurance/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Fri, 12 Apr 2024 09:29:02 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[Testing]]></category>
+		<guid isPermaLink="false">/?p=1306</guid>
+
+					<description><![CDATA[In the realm of Quality Assurance (QA), traditional testing methodologies often follow structured, predefined test cases meticulously designed to verify [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>In the realm of Quality Assurance (QA), traditional testing methodologies often follow structured, predefined test cases meticulously designed to verify predetermined functionalities. While these methods are essential for ensuring reliability and stability, they may sometimes miss the unexpected bugs or usability issues that real users might encounter. This is where exploratory testing comes into play, offering a dynamic and flexible approach that taps into the creativity and intuition of testers.</p>
+<h3>What is Exploratory Testing?</h3>
+<p>Exploratory testing is an approach to software testing that emphasizes the freedom and creativity of testers to explore the application under test (AUT) in an unscripted and adaptive manner. Unlike scripted testing, where tests are predefined and executed step-by-step, exploratory testing encourages testers to simultaneously design and execute tests, allowing them to adapt their approach based on the feedback and discoveries made during testing.</p>
+<h3>Pros and Cons of Exploratory Testing</h3>
+<h4>Pros:</h4>
+<p>&nbsp;</p>
+<ul>
+<li>As this type of testing doesn’t require any extensive test planning, the testing can even be done when requirement documents are not easily available.</li>
+<li>It is more efficient in short-term projects where minimal planning is required and important bugs are found quickly.</li>
+<li>This testing technique uncovers the maximum defects when compared with usual regression testing as the regression testing is only performed according to a fixed set of test cases.</li>
+<li>This type of testing can also be done by the management team and stakeholders since this doesn’t require any kind of scripting.</li>
+<li>In an agile environment where continuous deployments are done, exploratory testing is a perfect testing style that can share the insights in a limited timeframe.</li>
+</ul>
+<p>&nbsp;</p>
+<h4>Cons:</h4>
+<ul>
+<li>As exploratory testing is a crucial part of testing, it is more dependent on the tester’s prior skillset, knowledge and experience.</li>
+<li>As no formal documentation is made before performing exploratory testing, this might create a negative impact in long-term projects.</li>
+<li>It is difficult to review the test cases later which creates a possibility of missing the critical bugs.</li>
+</ul>
+<h3>The Role of Creativity</h3>
+<p>At its core, exploratory testing relies heavily on the creativity and intuition of testers. Testers are encouraged to think outside the box, leveraging their domain knowledge and experience to uncover potential issues that may not be evident through scripted tests alone. This creative freedom empowers testers to simulate real-world user interactions, enabling them to identify usability issues, edge cases, and unforeseen bugs that might go unnoticed in traditional testing approaches.</p>
+<h3>When and How to Use Exploratory Testing?</h3>
+<p>Exploratory Testing is said to be done in the early phases of the Software Development Life Cycle (SDLC). In the agile development environment where the sprints are short and software builds are released very frequently, exploratory testing plays a vital role in discovering and reporting bugs and getting them resolved within the same sprint cycle. The experience gained by testers from exploratory testing can be valuable in later stages of testing and in designing in-depth test cases. Once the test cases are designed from such investigation and observation, they can further be planned to be automated to get added to the regression suite.<br />
+Till now we are aware that exploratory testing is all about exploring. Exploratory testing is not only done to understand the product functionalities but also to understand the customer requirements. For quality bench marking, it is important to navigate the software according to the end user&#8217;s perspective. Though there is no defined process for exploratory testing, the below depiction will define a structure of exploratory testing commonly adopted by testers.</p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2245 size-full" src="/wp-content/uploads/2024/04/testing1.jpg" alt="" width="634" height="409" srcset="/wp-content/uploads/2024/04/testing1.jpg 634w, /wp-content/uploads/2024/04/testing1-300x194.jpg 300w" sizes="(max-width: 634px) 100vw, 634px" /></p>
+<h3>Key Principles of Exploratory Testing</h3>
+<h4>1. Adaptability:</h4>
+<p>Exploratory testing is highly adaptable, allowing testers to adjust their testing strategies on the fly based on emerging insights and observations. This flexibility enables testers to focus their efforts on areas of the application that are most likely to yield valuable results.</p>
+<h4>2. Learning-Oriented:</h4>
+<p>Exploratory testing is as much about learning as it is about testing. Testers approach each testing session with a curious mindset, seeking to understand the intricacies of the application and uncover potential areas of improvement. Every testing session presents an opportunity to gain new insights and refine testing strategies for future iterations.</p>
+<h4>3. Risk-Based:</h4>
+<p>Exploratory testing prioritizes testing efforts based on the perceived risks associated with different areas of the application. Testers focus their attention on high-risk areas first, ensuring that critical functionalities are thoroughly tested before moving on to less critical components. This risk-based approach helps optimize testing efforts and maximize test coverage.</p>
+<h4>4. Collaboration:</h4>
+<p>Exploratory testing encourages collaboration among testers, developers, and other stakeholders. By fostering open communication and sharing of insights, teams can leverage collective expertise to identify and address issues more effectively. Collaboration also helps build a shared understanding of the application and its requirements, leading to better-informed testing decisions.</p>
+<h3>Real-Time Example of Exploratory Testing</h3>
+<p>What we see is what we believe, right? You might still be wondering what exploratory testing looks like. Well, it looks like wandering out in an app and choosing your path to fly without depending on someone’s direction. That means, there are no pre-designed test cases and testers have some sort of quick description that defines what exactly needs to be tested.<br />
+Let’s take an example of a food delivery app and list a few testing modules that strike our mind:</p>
+<ul>
+<li>Login</li>
+<li>Search and filter</li>
+<li>Outlets nearby</li>
+<li>Restaurant selection</li>
+<li>Adding food items to the cart</li>
+<li>Modifying cart</li>
+<li>Promo codes</li>
+<li>Payment Gateway</li>
+<li>Delivery tracking</li>
+</ul>
+<p>In the case of product exploratory testing, it is a good practice to start the testing from the initial module like the login page and then move on to the next relevant module. Following this testing workflow would also cover the testing according to the end user&#8217;s perspective. Always remember, that speed and accuracy are the most important factors in such applications.<br />
+Since the food delivery app would have multiple restaurants and dishes, an exploratory tester needs to test with different test data. The login page and payment gateway are more concerned aspects in terms of security and are important to be tested with multiple test scenarios. However, being creative and analytical is something that exploratory testing requires the most.</p>
+<h4>Conclusion</h4>
+<p>Exploratory testing is a powerful approach that empowers testers to unleash their creativity and intuition in the pursuit of quality. By embracing adaptability, learning, collaboration, and risk-based testing principles, teams can leverage exploratory testing to uncover hidden bugs, improve test coverage, enhance the user experience, and ultimately deliver higher-quality software products. As technology continues to evolve, exploratory testing will remain a valuable tool in the QA arsenal, helping teams stay agile and responsive in an ever-changing landscape.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/2024/04/12/exploratory-testing-unleashing-creativity-in-quality-assurance/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Revolutionizing Image Enhancement: A Deep Dive into SRGAN</title>
+		<link>/2024/04/12/revolutionizing-image-enhancement-a-deep-dive-into-srgan/</link>
+					<comments>/2024/04/12/revolutionizing-image-enhancement-a-deep-dive-into-srgan/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Fri, 12 Apr 2024 09:28:25 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[Artificial Intelligence]]></category>
+		<guid isPermaLink="false">/?p=1304</guid>
+
+					<description><![CDATA[Welcome to the cutting-edge of image enhancement technology! In recent years, the field of computer vision has seen remarkable advancements, [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>Welcome to the cutting-edge of image enhancement technology! In recent years, the field of computer vision has seen remarkable advancements, and one such breakthrough is the Super-Resolution Generative Adversarial Network (SRGAN). In this blog post, we&#8217;ll explore the ins and outs of SRGAN, its significance in the world of image processing, and how it is transforming the way we perceive and enhance visual content.</p>
+<h3>What is it?</h3>
+<p>SRGAN, short for Super-Resolution Generative Adversarial Network, is a deep learning model specifically designed for image super-resolution. Its primary goal is to generate high-resolution images from low-resolution inputs, a task that was previously considered challenging.</p>
+<h3>What&#8217;s so special about it?</h3>
+<p>SRGAN goes beyond traditional image upscaling methods by leveraging deep learning techniques. It doesn&#8217;t just increase the pixel count but also adds realistic details to the images, resulting in visually appealing and more natural-looking high-resolution content.</p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2242 size-full" src="/wp-content/uploads/2024/04/other1.gif" alt="" width="968" height="376" /></p>
+<h3>Architecture of SRGAN</h3>
+<p>his formulation&#8217;s fundamental idea is to develop a generative model G to trick a differentiable discriminator D that has been trained to discern between actual and super-resolved pictures.<br />
+By using this method, the generator may be trained to produce results that are very close to authentic photos, making it challenging for D to classify them.The training of D and G is done using the min-max problem.</p>
+<p>&nbsp;</p>
+<h3>Create your own Super-Resolution GAN</h3>
+<h4>Create a virtual environment and let’s begin the coding</h4>
+<h4>Let’s start by importing some required libraries</h4>
+<pre>#Import Libraries
+from torchvision.transforms import Compose, RandomCrop, ToTensor, ToPILImage, CenterCrop, Resize
+from torch.utils.data import DataLoader, Dataset
+from PIL import Image
+import torch
+import math
+from os import listdir
+import numpy as np
+from torch.autograd import Variable
+from torch import nn, optim
+from torchvision.models.vgg import vgg16
+from tqdm import tqdm
+import os</pre>
+<h4>Creating constants and important functions used</h4>
+<pre># Enable anomaly detection in PyTorch autograd for debugging
+torch.autograd.set_detect_anomaly(True)
+# Constants for image processing
+UPSCALE_FACTOR = 4
+CROP_SIZE = 88
+# Mean and standard deviation values for image normalization
+mean = np.array([0.485, 0.456, 0.406])
+std = np.array([0.229, 0.224, 0.225])</pre>
+<h4>Now, I will load in some code for the dataset and dataloaders.</h4>
+<pre># Check if the given filename has an image file extension
+def is_image_file(filename):
+return any(filename.endswith(extension) for extension in ['.png', '.jpg', '.jpeg', '.PNG', '.JPG', '.JPEG'])
+
+# Calculate a valid crop size based on the upscale factor
+def calculate_valid_crop_size(crop_size, upscale_factor):
+return crop_size - (crop_size % upscale_factor)
+
+# Define a transformation for high-resolution training images
+def train_hr_transform(crop_size):
+ return Compose([
+RandomCrop(crop_size),
+ToTensor(),
+])
+
+# Define a transformation for low-resolution training images
+def train_lr_transform(crop_size, upscale_factor):
+return Compose([
+ToPILImage(),
+Resize(crop_size // upscale_factor, interpolation=Image.BICUBIC),
+ToTensor()
+])
+
+# Define a transformation for displaying images
+def display_transform():
+return Compose([
+ToPILImage(),
+Resize(400),
+CenterCrop(400),
+ToTensor()# Convert the image to a PyTorch tensor
+])
+
+class TrainDatasetFromFolder(Dataset):
+def __init__(self, dataset_dir, crop_size, upscale_factor):
+super(TrainDatasetFromFolder, self).__init__()
+# Get the list of image filenames in the dataset directory
+self.image_filenames = [join(dataset_dir, x) for x in                   
+listdir(dataset_dir) if is_image_file(x)]
+crop_size = calculate_valid_crop_size(crop_size, upscale_factor)
+self.hr_transform = train_hr_transform(crop_size)
+self.lr_transform = train_lr_transform(crop_size,upscale_factor)
+
+# Load and apply high-resolution and low-resolution transformations to the images
+def __getitem__(self, index):
+hr_image = self.hr_transform(Image.open(self.image_filenames[index]))
+lr_image = self.lr_transform(hr_image)
+return lr_image, hr_image
+
+# Return the number of images in the dataset
+def __len__(self):
+return len(self.image_filenames)</pre>
+<h4>Now let’s load the trainset</h4>
+<pre># Creating an instance of the TrainDatasetFromFolder class
+train_set = TrainDatasetFromFolder("Path to your HR Dataset", crop_size=CROP_SIZE, upscale_factor=UPSCALE_FACTOR)
+
+# Creating a DataLoader for training set
+trainloader = DataLoader(train_set, batch_size=32, num_workers=4, shuffle=True)</pre>
+<h4>Load the Generator Architecture</h4>
+<h3>GENERATOR network G</h3>
+<p>The residual blocks (B=16) were first generated by ResNet. Two convolutional layers with tiny 3&#215;3 kernels and 64 feature maps are utilised within the residual block. Batch-normalization layers and the activation function ParametricReLU are employed after that.</p>
+<pre>class Generator(nn.Module):
+def __init__(self, scale_factor):
+super(Generator, self).__init__()
+
+# Determine the number of upsample blocks based on the scale factor
+upsample_block_num = int(math.log(scale_factor, 2))
+
+# Initial convolutional block
+self.block1 = nn.Sequential(
+nn.Conv2d(3, 64, kernel_size=9, padding=4),
+nn.PReLU()
+)
+
+# Residual blocks
+self.block2 = ResidualBlock(64)
+self.block3 = ResidualBlock(64)
+self.block4 = ResidualBlock(64)
+self.block5 = ResidualBlock(64)
+self.block6 = ResidualBlock(64)
+
+# Additional convolutional block
+self.block7 = nn.Sequential(
+nn.Conv2d(64, 64, kernel_size=3, padding=1),
+nn.BatchNorm2d(64)
+)
+
+# Upsample blocks
+block8 = [UpsampleBlock(64, 2) for _ in range(upsample_block_num)]
+block8.append(nn.Conv2d(64, 3, kernel_size=9, padding=4))
+self.block8 = nn.Sequential(*block8)
+def forward(self, x):
+
+#Initial block
+block1 = self.block1(x)
+
+# Residual blocks
+block2 = self.block2(block1)
+block3 = self.block3(block2)
+block4 = self.block4(block3)
+block5 = self.block5(block4)
+block6 = self.block6(block5)
+block7 = self.block7(block6)
+block8 = self.block8(block1 + block7)
+
+# Apply tanh activation and normalization to get the final output
+return (torch.tanh(block8) + 1) / 2</pre>
+<p>Two learned sub-pixel convolution layers raise the input image&#8217;s resolution.</p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2241 size-full" src="/wp-content/uploads/2024/04/other2.gif" alt="" width="967" height="273" /></p>
+<h4>Load the Discriminator Architecture</h4>
+<h3>DISCRIMINATOR network D</h3>
+<p>Activate LeakyReLU (α=0.2) and prevent max-pooling across the network.<br />
+The maximization problem is trained onto the discriminator network.<br />
+Eight convolutional layers make up the network, and when the number of 3×3 filter kernels increases—from 64 to 512—it does so by a factor of two, much like in the VGGnetwork.<br />
+Every time the number of features doubles, the picture resolution is decreased using stepped convolutions.<br />
+To determine the likelihood of classifying a sample, two dense layers and a final sigmoid activation function are used after the generated 512 feature maps.</p>
+<pre>class Discriminator(nn.Module):
+def __init__(self):
+super(Discriminator, self).__init__()
+
+# Sequential network consisting of convolutional and activation layers
+self.net = nn.Sequential nn.Conv2d(3, 64, kernel_size=3, padding=1), # Input convolutional layer with 3 channels, output 64 channels
+nn.LeakyReLU(0.2), # Leaky ReLU activation with a negative slope of 0.2
+
+nn.Conv2d(64, 64, kernel_size=3, stride=2, padding=1), # Convolutional layer downsampling by stride 2
+nn.BatchNorm2d(64),
+nn.LeakyReLU(0.2),
+
+nn.Conv2d(64, 128, kernel_size=3, padding=1), # Convolutional layer with 128 output channels
+nn.BatchNorm2d(128),
+nn.LeakyReLU(0.2),
+
+nn.Conv2d(128, 256, kernel_size=3, padding=1),
+nn.BatchNorm2d(256),
+nn.LeakyReLU(0.2),
+
+nn.Conv2d(256, 256, kernel_size=3, stride=2, padding=1),
+nn.BatchNorm2d(256),
+nn.LeakyReLU(0.2),
+
+nn.Conv2d(256, 512, kernel_size=3, padding=1),
+nn.BatchNorm2d(512),
+nn.LeakyReLU(0.2),
+
+nn.Conv2d(512, 512, kernel_size=3, stride=2, padding=1),
+nn.BatchNorm2d(512),
+nn.LeakyReLU(0.2),
+
+nn.AdaptiveAvgPool2d(1),
+nn.Conv2d(512, 1024, kernel_size=1),
+nn.LeakyReLU(0.2),
+nn.Conv2d(1024, 1, kernel_size=1)
+)
+
+def forward(self, x):
+batch_size=x.size()[0]
+return torch.sigmoid(self.net(x).view(batch_size))</pre>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2240 size-full" src="/wp-content/uploads/2024/04/other3.gif" alt="" width="968" height="205" /></p>
+<h3>Implement the loss functions</h3>
+<h5>The TVLoss</h5>
+<pre>class TVLoss(nn.Module):
+def __init__(self, tv_loss_weight=1):
+super(TVLoss, self).__init__()
+
+# Initialize with the provided TV loss weight
+self.tv_loss_weight=tv_loss_weight
+def forward(self, x):
+batch_size=x.size()[0]
+h_x = x.size()[2]
+w_x = x.size()[3]
+
+# Calculate the number of elements in height and width dimensions
+count_h = self.tensor_size(x[:, :, 1:, :])
+count_w = self.tensor_size(x[:, :, :, 1:])
+
+# Calculate TV loss along height and width
+h_tv = torch.pow(x[:, :, 1:, :] - x[:, :, :h_x - 1, :], 2).sum()
+w_tv = torch.pow(x[:, :, :, 1:] - x[:, :, :, :w_x - 1], 2).sum()
+
+# Return the total variation loss
+return self.tv_loss_weight * 2 * (h_tv / count_h + w_tv / count_w) / batch_size
+
+@staticmethod
+def tensor_size(t):
+# Helper method to calculate the total number of elements in tensor
+return t.size()[1] * t.size()[2] * t.size()[3]</pre>
+<h5>The Generator Loss</h5>
+<pre>class GeneratorLoss(nn.Module):
+def __init__(self):
+super(GeneratorLoss, self).__init__()
+
+# Load VGG16 pretrained model and extract features until layer 31
+vgg = vgg16(pretrained=True)
+loss_network = nn.Sequential(*list(vgg.features)[:31]).eval()
+
+# Set requires_grad to False for all parameters in the loss network
+for param in loss_network.parameters():
+param.requires_grad = False
+
+# Save the modified VGG model as the loss network
+self.loss_network = loss_network
+
+# Define Mean Squared Error (MSE) loss
+self.mse_loss = nn.MSELoss()
+
+# Create an instance of TVLoss for Total Variation loss
+self.tv_loss = TVLoss()
+
+def forward(self, out_labels, out_images, target_images):
+
+# Adversarial loss: mean of 1 - out_labels (maximizing out_labels for fake images)
+adversial_loss = torch.mean(1 - out_labels)
+
+# Perception loss: MSE loss between generated images and target images
+perception_loss = self.mse_loss(out_images, target_images)
+
+ # Image loss: MSE loss between generated images and target images
+image_loss = self.mse_loss(out_images, target_images)
+
+# Total Variation (TV) loss to encourage spatial smoothness
+tv_loss = self.tv_loss(out_images)
+
+# Combine all loss components with specified weights
+return image_loss + 0.001 * adversial_loss + 0.006 * perception_loss + 2e-8 * tv_loss</pre>
+<h4>Now we implement the residual block here</h4>
+<pre># Now we will start implementing the model.
+class ResidualBlock(nn.Module):
+def __init__(self, channels):
+super(ResidualBlock, self).__init__()
+
+# First convolutional layer with kernel_size=3 and padding=1
+self.conv1 = nn.Conv2d(channels, channels, kernel_size=3, padding=1)
+nn.init.kaiming_normal_(self.conv1.weight, nonlinearity='relu')
+self.bn1 = nn.BatchNorm2d(channels)
+self.prelu = nn.PReLU()
+self.conv2 = nn.Conv2d(channels, channels, kernel_size=3, padding=1)
+self.bn2 = nn.BatchNorm2d(channels)
+def forward(self, x):
+# Forward pass through the residual block
+residual = self.conv1(x)
+residual = self.bn1(residual)
+residual = self.prelu(residual)
+residual = self.conv2(residual)
+residual = self.bn2(residual)
+return x + residual</pre>
+<h4>Up-sampling the Neural Network Module</h4>
+<pre>class UpsampleBlock(nn.Module):
+def __init__(self, in_channels, up_scale):
+super(UpsampleBlock, self).__init__()
+
+# Convolutional layer to increase the number of channels
+self.conv = nn.Conv2d(in_channels, in_channels * up_scale ** 2, kernel_size=3, padding=1)
+
+# PixelShuffle layer for upscaling
+self.pixel_shuffle = nn.PixelShuffle(up_scale)
+self.prelu = nn.PReLU()
+def forward(self, x):
+
+# Forward pass through the UpsampleBlock
+x = self.conv(x)
+x = self.pixel_shuffle(x)
+x = self.prelu(x)
+return x</pre>
+<h4>Standard device selection</h4>
+<h4>Implementation of the function and class created above</h4>
+<h4>Set the optimizer and learning rate</h4>
+<h4>Generate results</h4>
+<pre># Check if CUDA (GPU) is available and set device accordingly
+device  = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+# Instantiate the Generator and Discriminator models
+netG = Generator(UPSCALE_FACTOR)
+netD = Discriminator()
+
+# Instantiate the GeneratorLoss criterion for training the Generator
+generator_criterion = GeneratorLoss()
+
+ 
+# Move models and loss criterion to the selected device (CPU or GPU)
+generator_criterion = generator_criterion.to(device)
+netG = netG.to(device)
+netD = netD.to(device)
+
+ 
+# Set up Adam optimizers for Generator and Discriminator
+optimizerG = optim.Adam(netG.parameters(), lr=0.001)
+optimizerD = optim.Adam(netD.parameters(), lr=0.001)
+
+results = {
+"d_loss":[],
+"g_loss":[],
+"d_score": [],
+"g_score": []
+}
+print(results)</pre>
+<h4>Set the desired Epoch number as per the size of the dataset , for General I use 150</h4>
+<pre>N_EPOCHS = 150</pre>
+<h4>Start the training</h4>
+<pre>for epoch in range(1, N_EPOCHS + 1):
+train_bar = tqdm(trainloader)
+running_results = {'batch_sizes':0, 'd_loss':0,
+"g_loss":0, "d_score":0, "g_score":0}
+
+netG.train()
+netD.train()
+for data, target in train_bar:
+g_update_first = True
+batch_size = data.size(0)
+running_results['batch_sizes'] += batch_size
+real_img = Variable(target)
+real_img = real_img.to(device)
+z = Variable(data)
+z = z.to(device)
+
+## Update Discriminator ##
+fake_img = netG(z)
+netD.zero_grad()
+real_out = netD(real_img).mean()
+fake_out = netD(fake_img).mean()
+d_loss = 1 - real_out + fake_out
+d_loss.backward(retain_graph = True)
+optimizerD.step()
+
+## Now update Generator
+fake_img = netG(z)
+fake_out = netD(fake_img).mean()
+netG.zero_grad()
+g_loss = generator_criterion(fake_out, fake_img, real_img)
+g_loss.backward()
+
+fake_img = netG(z)
+fake_out = netD(fake_img).mean()
+
+optimizerG.step()
+running_results['g_loss'] += g_loss.item() * batch_size
+running_results['d_loss'] += d_loss.item() * batch_size
+running_results['d_score'] += real_out.item() * batch_size
+running_results['g_score'] += fake_out.item() * batch_size
+
+## Updating the progress bar
+train_bar.set_description(desc="[%d/%d] Loss_D: %.4f Loss_G: %.4f D(x): %.4f D(G(z)): %.4f" % (
+epoch, N_EPOCHS, running_results['d_loss'] / running_results['batch_sizes'],
+running_results['g_loss'] / running_results['batch_sizes'],
+running_results['d_score'] / running_results['batch_sizes'],
+running_results['g_score'] / running_results['batch_sizes']
+))
+netG.eval()
+netG.train()</pre>
+<h4>Save the Generator and Discriminator model seperately</h4>
+<pre>import torch
+
+# Assuming you have trained your models and stored them in 'netG' and 'netD'
+# Modify the path accordingly
+epoch_number = 150.1
+generator_save_path = 'folder path/generator_model_epoch_{}.pth'.format(epoch_number)
+discriminator_save_path = 'folder path/discriminator_model_epoch_{}.pth'.format(epoch_number)
+                          
+# Save the generator and discriminator models
+torch.save(netG.state_dict(), generator_save_path)
+torch.save(netD.state_dict(), discriminator_save_path)</pre>
+<h3>Applications and Practical Uses</h3>
+<h5>Super-Resolution Generative Adversarial Networks (SRGAN) has found applications in various domains due to its ability to enhance image resolution while preserving and generating realistic details. Here are some notable applications of SRGAN:</h5>
+<h4>Photography</h4>
+<p><b>High-Resolution Image Up-scaling:</b> Photographers can use SRGAN to enhance the resolution of low-resolution images without losing image quality, allowing for better print quality or display on larger screens</p>
+<h4>Video Enhancement</h4>
+<p><b>Upgrading Video Quality:</b> SRGAN can be applied to enhance the quality of low-resolution video frames, improving the visual experience of video content. This is particularly useful for restoring old or degraded videos.</p>
+<h4>Medical Imaging</h4>
+<p><b>Enhancing Medical Imagery:</b> In medical imaging, SRGAN can be utilized to improve the resolution of images obtained through various diagnostic techniques, aiding in more accurate analysis and diagnosis</p>
+<h4>Satellite Imagery</h4>
+<p><b>Improving Satellite Image Resolution:</b> SRGAN can enhance the resolution of satellite images, providing clearer and more detailed views of landscapes, urban areas, and environmental features.</p>
+<h4>Art and Graphics Design</h4>
+<p><b>Creating High-Resolution Artwork: </b>Artists and graphic designers can use SRGAN to increase the resolution of digital artwork, ensuring that the final output is crisp and detailed.</p>
+<h4>Surveillance and Security</h4>
+<p><b>Enhancing Surveillance Footage:</b> Security systems and surveillance cameras can benefit from SRGAN by improving the quality of captured images, which can be crucial for identifying details in forensic analysis.</p>
+<h4>Virtual Reality (VR) and Augmented Reality (AR)</h4>
+<p><b>Enhancing Visual Realism:</b> SRGAN can be employed to enhance the visual quality of images used in VR and AR applications, providing users with more immersive and realistic experiences.</p>
+<h4>Remote Sensing</h4>
+<p><b>High-Resolution Remote Sensing:</b> SRGAN can be applied to enhance the resolution of remote sensing data, such as images captured by drones or other aerial platforms, improving the accuracy of data analysis in fields like agriculture and environmental monitoring.</p>
+<h4>Facial Recognition</h4>
+<p><b>Improving Facial Detail:</b> In facial recognition systems, SRGAN can contribute to better face recognition accuracy by generating high-resolution facial images from lower-resolution inputs.</p>
+<h4>Consumer Electronics</h4>
+<p><b>TV and Display Enhancement:</b> SRGAN can be integrated into consumer electronics, such as smart TVs and displays, to upscale lower-resolution content for a more enjoyable and immersive viewing experience.</p>
+<h3>Challenges</h3>
+<h5>Computational Complexity</h5>
+<p>Training SRGAN models demands substantial computational resources and time. The complexity of the model architecture, especially in the context of adversarial training, can be a hindrance for practical implementation.</p>
+<h5>Memory Requirements</h5>
+<p>Large-scale deep learning models like SRGAN require substantial memory, making it challenging for deployment on devices with limited resources, such as smartphones or embedded systems.</p>
+<h5>Training Dataset Quality:</h5>
+<p>The performance of SRGAN depends on the quality and diversity of the training dataset. Incomplete or biased datasets may lead to artifacts or inaccuracies in the generated high-resolution images.</p>
+<h5>Real-Time Applications</h5>
+<p>Achieving real-time performance remains a challenge, particularly for applications such as video streaming or live video processing. Optimizing the computational efficiency of SRGAN for these scenarios is an ongoing area of research.</p>
+<h5>Generalization to Diverse Scenes</h5>
+<p>SRGAN models trained on specific types of images may struggle to generalize well to diverse scenes or unconventional inputs. Ensuring robust performance across a wide range of content types is an active research challenge.</p>
+<h3>Development and Future Fore-sighting</h3>
+<h5>Optimizing Training Algorithms</h5>
+<p>Researchers are working on developing more efficient training algorithms for SRGAN to reduce the computational burden and speed up the training process. This includes exploring novel optimization techniques and model architectures.</p>
+<h5>Memory-Efficient Models</h5>
+<p>To address memory constraints, there is ongoing research to design more memory-efficient SRGAN variants that can be deployed on devices with limited resources, expanding the practical applications of the technology.</p>
+<h5>Transfer Learning and Domain Adaptation</h5>
+<p>Investigating transfer learning and domain adaptation techniques allows SRGAN models to generalize better to new or unseen types of images. This can enhance the model&#8217;s applicability in diverse real-world scenarios.</p>
+<h5>Real-Time Processing</h5>
+<p>Efforts are being made to develop lightweight SRGAN models capable of real-time image and video processing. This involves optimizing architectures and algorithms for faster inference without compromising on quality.</p>
+<h5>Addressing Artifacts and Image Quality</h5>
+<p>Ongoing research focuses on refining SRGAN models to reduce artifacts and improve the perceptual quality of generated images. This includes incorporating human perceptual factors into the training process and exploring advanced loss functions.</p>
+<h5>User-Friendly Implementations</h5>
+<p>Developing user-friendly implementations and tools for SRGAN facilitates wider adoption. This involves creating accessible software libraries, frameworks, or applications that make it easier for practitioners to apply SRGAN to their specific use cases.</p>
+<p>&nbsp;</p>
+<h3>Conclusion</h3>
+<p>As we delve into the era of SRGAN and witness its trans-formative impact on image enhancement, it&#8217;s clear that we are at the forefront of a technological revolution. The marriage of deep learning and image processing has given birth to a powerful tool that not only increases resolution but elevates the visual experience to new heights. Keep an eye on SRGAN as it continues to evolve, promising a future where the line between reality and digital creation becomes increasingly blurred.</p>
+<p>&nbsp;</p>
+<h3>References</h3>
+<ul>
+<li>Bell, S., Zitnick, C. L., Bala, K., Girshick, R. (2016). Inside-outside net: Detecting objects in context with skip pooling and recurrent neural networks. In: IEEE Conference on Computer Vision and Pattern Recognition.</li>
+<li>Dong, C., Loy, C. C., He, K., Tang, X. (2014) Learning a deep convolutional network for image super-resolution. In: European Conference on Computer Vision</li>
+<li>Shi, W., Caballero, J., Huszár, F., Totz, J., Aitken, A. P., Bishop, R., Rueckert, D., Wang, Z. (2016) Real-time single image and video super-resolution using an efficient sub-pixel convolutional neural network. In: IEEE Conference on Computer Vision and Pattern Recognition</li>
+</ul>
+]]></content:encoded>
+					
+					<wfw:commentRss>/2024/04/12/revolutionizing-image-enhancement-a-deep-dive-into-srgan/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Classification Systems in SAP Commerce</title>
+		<link>/2024/04/12/classification-systems-in-sap-commerce/</link>
+					<comments>/2024/04/12/classification-systems-in-sap-commerce/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Fri, 12 Apr 2024 09:27:27 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[SAP Commerce]]></category>
+		<guid isPermaLink="false">/?p=1302</guid>
+
+					<description><![CDATA[In Hybris, we have two main systems: the Product Catalog system and the Classification system. The Product Catalog organizes categories [&#8230;]]]></description>
+										<content:encoded><![CDATA[<div class="article-post">
+<p>In Hybris, we have two main systems: the Product Catalog system and the Classification system. The Product Catalog organizes categories and products in a structured way. Similarly, the Classification system also arranges categories hierarchically, and these are known as classifying categories. We use classifying categories in the Classification system to assign what we call category features, or classification attributes, to products or product categories within the Product catalog.</p>
+<p>Now, let&#8217;s simplify things with an example requirement:<br />
+<span class="abc">Requirement:</span> Imagine we have products in our catalog where some require a *custom attribute, while others do not.<br />
+Here&#8217;s how we can handle this using the Classification system:<br />
+<span class="abc">Define a New Classification Attribute:</span> First, we create a new classification attribute or category feature, let&#8217;s call it &#8220;customAttribute.&#8221;<br />
+<span class="abc">Assign the Attribute:</span> Then we assign this classification attribute only to the products or categories that need it in our product catalog.<br />
+<span class="abc">Attribute Value Handling:</span> The actual value of the customAttribute is not stored within the Classification system. Instead, it&#8217;s kept with the respective product in the product catalog. This means it&#8217;s displayed just like any other product attribute.<br />
+<span class="abc">Dynamic Attribute Addition:</span> With this approach, the customAttribute exists only when we assign the &#8220;customAttribute category feature&#8221; to a product or product category. It allows for dynamic addition of product attributes at runtime, and we avoid cluttering all products with unnecessary attributes.</p>
+<h4>When to Prefer the Classification System: :</h4>
+<p><span class="abc">Selective Product Attributes:</span>When we need to define attributes for only certain products rather than for all.<br />
+<span class="abc">Uncertain Attribute Lifespan::</span> When we&#8217;re unsure about how long an attribute will be needed, and it might become unnecessary after a period.<br />
+<span class="abc">Dynamic Attribute Addition::</span> When we need to add product attributes dynamically during runtime, especially when dealing with changing requirements.<br />
+In essence, the Classification system provides flexibility in managing product attributes, allowing us to tailor attributes to specific products or categories, adapt to changing needs, and avoid unnecessary clutter in our catalog.</p>
+<p>&nbsp;</p>
+<h3>Example:</h3>
+<p>$productCatalog=electronicsProductCatalog $productCatalogName=Electronics Product Catalog<br />
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default=&#8217;Online&#8217;])[unique=true,default=$productCatalog:Online]<br />
+$classCatalogVersion=catalogversion(catalog(id[default=&#8217;ElectronicsClassification&#8217;]),version[default=&#8217;1.0&#8242;])[unique=true,default=&#8217;ElectronicsClassification:1.0&#8242;]<br />
+$classSystemVersion=systemVersion(catalog(id[default=&#8217;ElectronicsClassification&#8217;]),version[default=&#8217;1.0&#8242;])[unique=true]<br />
+$class=classificationClass(ClassificationClass.code,$classCatalogVersion)[unique=true]<br />
+$supercategories=source(code, $classCatalogVersion)[unique=true]<br />
+$categories=target(code, $catalogVersion)[unique=true]<br />
+$attribute=classificationAttribute(code,$classSystemVersion)[unique=true]<br />
+$unit=unit(code,$classSystemVersion)<br />
+$lang=en</p>
+<p>1.Create a Classification Class, also known as a section, in which the Classification attribute will be displayed. Here, you need to provide the Classification Class Code and Name.<br />
+For Example: Code =clavritClassificationClass, Name = Clavrit Classification Class<br />
+# Insert Classifications<br />
+<span class="abc">INSERT_UPDATE ClassificationClass; code[unique = true]; name[lang = $lang]; $classCatalogVersion; allowedPrincipals(uid)[default = &#8216;customergroup&#8217;] ; clavritClassificationClass ; Clavrit Classification Class</span></p>
+<p>2.Create a Classification Attribute, which will be displayed in the Attributes tab in the backoffice.<br />
+For Example Code= clavritAttribute, Name=: Clavrit Attribute<br />
+# Insert Classification Attributes<br />
+<span class="abc">INSERT_UPDATE ClassificationAttribute; code[unique = true]; name[lang = $lang]; $classSystemVersion; ;clavritAttribute ; Clavrit Attribute</span></p>
+<p>3.Define the many-to-many relation between categories, where the source, i.e., supercategories, will be the classification class code, and the target, i.e., categories, will be the name of the category.<br />
+# Links ClassificationClasses to Categories<br />
+<span class="abc">INSERT_UPDATE CategoryCategoryRelation;$categories;$supercategories ;brand_745 ;clavritClassificationClass</span></p>
+<p>4. Create the ClassificationAttributeAssignment which basically maps the Classification class with the classification attribute and position.<br />
+<span class="abc">INSERT_UPDATE ClassAttributeAssignment; $class; $attribute; position;attributeValues(code, $classSystemVersion); range[default = false]; $unit; listable[default = true]; localized[default = true] ; clavritClassificationClass ; clavritAttribute ; 1 ;</span></p>
+<p>After successfully importing, go inside the backoffice, click on &#8220;Products,&#8221; and add a category.</p>
+<p>&nbsp;</p>
+<div><img decoding="async" class=" img-fluid" src="https://clavrit.com/img/blog/Hybris-Blog1/H1.1.png" alt="" width="100%" /> <img decoding="async" class=" img-fluid" src="https://clavrit.com/img/blog/Hybris-Blog1/H1.2.png" alt="" width="100%" /><br />
+After that we can see inside the attributes<img decoding="async" class=" img-fluid" src="https://clavrit.com/img/blog/Hybris-Blog1/H1.3.png" alt="" width="100%" /></p>
+<div>
+<p>5.Map the Product with Classification class : $productCatalog=electronicsProductCatalog $productCatalogName=Electronics Product Catalog $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default=&#8217;Online&#8217;])[unique=true,default=$productCatalog:Online] $clAttrModifiers=system=&#8217;ElectronicsClassification&#8217;,version=&#8217;1.0&#8242;,translator=de.hybris.platform.catalog.jalo.classification.impex.ClassificationAttributeTranslator,lang=en $clavritAttribute = @clavritAttribute[$clAttrModifiers]; <span class="abc">INSERT_UPDATE Product; pk[unique = true]; $clavritAttribute ; 8796221046785 ; Clavrit Test Value</span></p>
+</div>
+<p><img decoding="async" class=" img-fluid" src="https://clavrit.com/img/blog/Hybris-Blog1/H1.4.png" alt="" width="100%" /><br />
+After success we can see the value.</p>
+<p><img decoding="async" class=" img-fluid" src="https://clavrit.com/img/blog/Hybris-Blog1/H1.5.png" alt="" width="100%" /></p>
+<h4>to Fetch a particular classification Attribute:</h4>
+<p>DB Table Name = <span class="abc">classificationattribute</span> select * from {classificationattribute} where {code}=&#8217;clavritAttribute&#8217;</p>
+<p><img decoding="async" class=" img-fluid" src="https://clavrit.com/img/blog/Hybris-Blog1/H1.6.png" alt="" width="100%" /> <img decoding="async" class=" img-fluid" src="https://clavrit.com/img/blog/Hybris-Blog1/H1.7.png" alt="" width="100%" /> </p>
+<h4>to Fetch the value of a particular Classification Attribute:</h4>
+<p>DB Table Name = <span class="abc">productfeatures</span> SELECT * FROM productfeatures order by CREATEDTS desc <img decoding="async" class=" img-fluid" src="https://clavrit.com/img/blog/Hybris-Blog1/H1.8.png" alt="" width="100%" /> <img decoding="async" class=" img-fluid" src="https://clavrit.com/img/blog/Hybris-Blog1/H1.9.png" alt="" width="100%" /></p>
+</div>
+</div>
+<div class="after-post-tags">
+<ul class="tags">
+<li>Design</li>
+<li>Growth Mindset</li>
+<li>Productivity</li>
+<li>Personal Growth</li>
+</ul>
+</div>
+]]></content:encoded>
+					
+					<wfw:commentRss>/2024/04/12/classification-systems-in-sap-commerce/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Reactive programming through Java</title>
+		<link>/2024/04/12/reactive-programming-through-java/</link>
+					<comments>/2024/04/12/reactive-programming-through-java/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Fri, 12 Apr 2024 09:26:31 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[Java]]></category>
+		<guid isPermaLink="false">/?p=1298</guid>
+
+					<description><![CDATA[Reactive programming is a developer paradigm focused on creating applications that are responsive to changes, asynchronous in nature, and driven [&#8230;]]]></description>
+										<content:encoded><![CDATA[<div class="article-post">
+<p>Reactive programming is a developer paradigm focused on creating applications that are responsive to changes, asynchronous in nature, and driven by events. It emphasizes handling data streams and events as first-class citizens, enabling developers to write more efficient, scalable, and resilient code. Java reactive programming is a programming approach that emphasizes the development of applications that are both responsive and scalable, capable of handling both concurrent and asynchronous operations effectively.</p>
+<h3>Terms need to know:</h3>
+<p><span class="abc">Producer:</span>The producer acts as a data source and it will publish events.<br />
+<span class="abc">Subscriber:</span> It listens to the events from the producer, it subscribes and consumes those events.<br />
+<span class="abc">Processor:</span> It acts as a middleman that connects publisher to subscriber.<br />
+<span class="abc">Stream:</span> It is a series of events that are ordered in time. A stream can emit three different types of signals: A value of a certain type, an error, or a completed signal.<br />
+<span class="abc">Reactive Streams:</span> A standard for asynchronous stream processing with non-blocking backpressure.<br />
+<span class="abc">Flux and Mono:</span> Specific types of observables provided by Project Reactor for handling streams of data. Flux represents a stream of multiple items, while Mono represents a stream of at most one item.<br />
+<span class="abc">Backpressure:</span> The mechanism used to handle situations where the rate of data production exceeds the rate of data consumption.<br />
+<span class="abc">Asynchronous Data Stream:</span> A stream of data that emits values one at a time with a delay between them is known as an asynchronous data stream.</p>
+<p>&nbsp;</p>
+<h3>Core features of Reactive Programming:</h3>
+<ul>
+<li>New programming Paradigm</li>
+<li>Asynchronous and non-blocking</li>
+<li>Functional style code</li>
+<li>Data flow as event driven Stream</li>
+<li>Backpressure on data streams</li>
+</ul>
+<h3>Why we required Reactive Programming :</h3>
+<p><span class="abc">Inherently Lazy Execution:</span> Reactive programming promotes laziness, meaning computations don&#8217;t occur until there&#8217;s a subscriber. This &#8220;stop &amp; play&#8221; capability allows for more efficient resource utilization and responsive applications.<br />
+<span class="abc">Concise Code:</span> By focusing on modelling events and their dependencies, reactive programming often results in more compact implementations. Developers spend less time on implementation details and more on understanding the overall flow of events.<br />
+<span class="abc">Less Code To Write:</span> With libraries like RxJS providing built-in operators for common behaviours (e.g., debouncing, throttling), developers spend less time implementing these functionalities from scratch. This leads to reduced development time and more maintainable codebases.<br />
+<span class="abc">Effortless Cancellation:</span> Reactive programming simplifies cancellation mechanisms, making it easy to cancel on going operations. This capability is particularly useful in scenarios where users need to abort or change their requests or actions.</p>
+<p>&nbsp;</p>
+<h3>How Reactive Programming working with Java:</h3>
+<p>In Java, reactive programming is often implemented using libraries such as Reactive Streams, Project Reactor, and RxJava, which provide APIs for writing reactive code. These libraries allow developers to handle streams of data and events asynchronously, using concepts such as Observables, Observers, and Streams, and applying operators for processing and transforming data in a reactive and non-blocking manner.</p>
+<p><span class="abc">Project Reactor:</span> Developed by the Spring team, Project Reactor is a reactive programming library for building non-blocking applications on the JVM. It provides support for reactive streams, asynchronous operations, and reactive data processing.<br />
+<span class="abc">RxJava:</span> RxJava is a reactive extension library for Java that implements the ReactiveX API. It allows developers to work with asynchronous data streams and provides operators for composing and transforming streams of data in a declarative and functional style.</p>
+<h3>Example:</h3>
+<h4>Basic Crud operation using Java Reactive programming:</h4>
+<h5>Entity:</h5>
+<pre>@Table("products")
+public class Product {
+
+	@Id
+	private Long id;
+	private String name;
+	private String description;
+	private double value;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public double getValue() {
+		return value;
+	}
+
+	public void setValue(double value) {
+		this.value = value;
+	}
+
+	public Product() {
+		super();
+	}
+
+	public Product(Long id, String name, String description, double value) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.value = value;
+	}
+}
+
+</pre>
+<h5>Controller:</h5>
+<pre>@RestController
+public class ProductController {
+
+	@Autowired
+	ProductService productService;
+
+	@GetMapping("/allproducts")
+
+	public Flux getAllProducts() {
+		return productService.getAllProducts();
+	}
+
+	@GetMapping("/getproductbyid/{id}")
+	public Mono getProductById(@PathVariable Long id) {
+		return productService.getProductById(id);
+	}
+
+	@DeleteMapping("/deleteproductbyid{id}")
+	public Mono deleteProductById(@PathVariable Long id) {
+		return productService.deleteProduct(id);
+	}
+
+	@PostMapping("/saveproduct")
+	public Mono saveProduct(@RequestBody Product product) {
+
+		return productService.saveProduct(product);
+	}
+
+}
+
+</pre>
+<h5>Repository:</h5>
+<pre>import org.springframework.data.repository.reactive.ReactiveCrudRepository;
+
+public interface ProductRepository extends ReactiveCrudRepository&lt;product, long=""&gt; {
+
+}
+&lt;/product,&gt;</pre>
+<h5>Service:</h5>
+<pre>@Service
+public class ProductService {
+ 
+	@Autowired
+	ProductRepository productRepository;
+ 
+	public Flux getAllProducts() {
+		return productRepository.findAll();
+	}
+ 
+	public Mono getProductById(Long id) {
+		return productRepository.findById(id);
+	}
+ 
+	public Mono deleteProduct(Long id) {
+		return productRepository.deleteById(id);
+	}
+	
+	 public Mono saveProduct(Product product) {
+	      
+	        product.setId(null);
+	        return productRepository.save(product);
+	    }
+ 
+}
+
+</pre>
+<h5>Pom.xml:</h5>
+<pre></pre>
+<h5>Application.properties:</h5>
+<pre>spring.r2dbc.url=r2dbc:mysql://localhost:3306/reactive
+spring.r2dbc.username=root
+spring.r2dbc.password=root
+
+logging.level.org.springframework.data.repository=DEBUG
+logging.level.org.springframework.r2dbc.core=DEBUG
+
+</pre>
+<h5>Output:</h5>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2236 size-full" src="/wp-content/uploads/2024/04/output1.jpg" alt="" width="1326" height="494" srcset="/wp-content/uploads/2024/04/output1.jpg 1326w, /wp-content/uploads/2024/04/output1-300x112.jpg 300w, /wp-content/uploads/2024/04/output1-1024x381.jpg 1024w, /wp-content/uploads/2024/04/output1-768x286.jpg 768w" sizes="(max-width: 1326px) 100vw, 1326px" /></p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2235 size-full" src="/wp-content/uploads/2024/04/output2.jpg" alt="" width="1326" height="545" srcset="/wp-content/uploads/2024/04/output2.jpg 1326w, /wp-content/uploads/2024/04/output2-300x123.jpg 300w, /wp-content/uploads/2024/04/output2-1024x421.jpg 1024w, /wp-content/uploads/2024/04/output2-768x316.jpg 768w" sizes="(max-width: 1326px) 100vw, 1326px" /></p>
+<p>&nbsp;</p>
+<h3>Steps:</h3>
+<p><span class="abc">Step 1:</span> Add required dependencies in pom.xml file.<br />
+<span class="abc">Step 2:</span> Create a product entity with required fields.<br />
+<span class="abc">Step 3:</span> Create a ProductRepository by extending ReactiveCrudRepository.<br />
+<span class="abc">Step 4:</span> Create a ProductService and manage operations related to products.<br />
+<span class="abc">Step 5:</span> Create a ProductController to handle client request related to products.<br />
+<span class="abc">Step 6:</span> Configure the properties file for Database connectivity.</p>
+<p>&nbsp;</p>
+<h3>Higly usage area’s of Reactive programming:</h3>
+<p><span class="abc">Web Development:</span> Java reactive programming is a great approach when you aim to build websites that need to work with asynchronous, non-blocking, and concurrent requests.<br />
+<span class="abc">IoT(Internet of things):</span> Reactive programming is a great tool for handling all the data streams from IoT devices. Since data generated from IoT devices is large, the responsive and flexible character of reactive programming makes it suitable for handling it.<br />
+<span class="abc">Mobile Development:</span> Mobile app development, particularly for real-time applications and games, benefits from reactive programming. Libraries such as RxJava for Android and RxSwift for iOS enable developers to handle asynchronous tasks, manage data streams, and create responsive user experiences.</p>
+<p>&nbsp;</p>
+<h3>Conclusion:</h3>
+<p>Java reactive programming is a great tool for building robust, scalable, and responsive modern applications. It is natural for developers to experiment with new programming paradigms and strive for further development.</p>
+</div>
+<div class="after-post-tags">
+<ul class="tags">
+<li>Design</li>
+<li>Growth Mindset</li>
+<li>Productivity</li>
+<li>Personal Growth</li>
+</ul>
+</div>
+]]></content:encoded>
+					
+					<wfw:commentRss>/2024/04/12/reactive-programming-through-java/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>SAP Commerce &#8211; Clavrit</title>
+	<atom:link href="/tag/sap-commerce/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description></description>
+	<lastBuildDate>Sat, 20 Apr 2024 04:39:29 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.5.2</generator>
+	<item>
+		<title>Localization and LP table in SAP Commerce</title>
+		<link>/2024/04/19/localization-and-lp-table-in-sap-commerce/</link>
+					<comments>/2024/04/19/localization-and-lp-table-in-sap-commerce/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Fri, 19 Apr 2024 07:29:30 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[SAP Commerce]]></category>
+		<guid isPermaLink="false">/?p=2140</guid>
+
+					<description><![CDATA[In SAP Hybris Commerce, “localization” refers to the capability of managing data for different locales, languages, and countries. This is [&#8230;]]]></description>
+										<content:encoded><![CDATA[<div class="mainheading"></div>
+<p>In SAP Hybris Commerce, “localization” refers to the capability of managing data for different locales, languages, and countries. This is particularly important for global businesses that need to provide content, products, and services tailored to specific regions across the globe.</p>
+<p>Internally whenever we creating any item type and in that any one of the attribute is localized then the corresponding LP (Localized Property) table will be created. The Localized Property (LP) table is a mechanism in Hybris that enables the localization of attributes within an item type. It is used to store values for a specific attribute based on different languages or locales. Each item type having any of the attributes that needs to be localized has a corresponding LP table to store the localized values.</p>
+<h5>In this article we will go through two implementations:</h5>
+<p>1. Create a new itemtype with three attributes, and one of the attribute is localized. And validate it using Administrative Console (HAC) and Backoffice.</p>
+<p>2. Add a new localized attribute in product itemtype and display the same on storefront.</p>
+<h3>Implementation 1:</h3>
+<h4>1.First we need to create one itemtype in *core-items.xml file.</h4>
+<pre></pre>
+<p>After performing the above step do ant all (it will generate corresponding Model class (StudentModel) and start the server and, perform the system update (the corresponding table (StudentDetails) and corresponding LP (StudentDetailslp) table will be created in the Database.<br />
+For normal attributes (studentID, studentFirstName) the setters and getters will be generated and for localized attribute (studentLastName) there are two setters and getters will be created. One is for normal and another one is for Localized (having additional parameter of type Locale as highlighted in the below code snippet).</p>
+<pre>   @Accessor(qualifier = "studentID", type = Accessor.Type.GETTER)
+   public String getStudentID()
+   {
+   return getPersistenceContext().getPropertyValue(STUDENTID);
+   }
+   
+   @Accessor(qualifier = "studentID", type = Accessor.Type.SETTER)
+   public void setStudentID(final String value)
+   {
+   getPersistenceContext().setPropertyValue(STUDENTID, value);
+   }
+   
+   @Accessor(qualifier = "studentFirstName", type = Accessor.Type.GETTER)
+   public String getStudentFirstName()
+   {
+   return getPersistenceContext().getPropertyValue(STUDENTFIRSTNAME);
+   }
+   
+   @Accessor(qualifier = "studentFirstName", type = Accessor.Type.SETTER)
+   public void setStudentFirstName(final String value)
+   {
+   getPersistenceContext().setPropertyValue(STUDENTFIRSTNAME, value);
+   }
+   
+   @Accessor(qualifier = "studentLastName", type = Accessor.Type.GETTER)
+   public String getStudentLastName()
+   {
+   return getStudentLastName(null);
+   }
+   
+   @Accessor(qualifier = "studentLastName", type = Accessor.Type.SETTER)
+   public void setStudentLastName(final String value)
+   {
+   setStudentLastName(value,null);
+   }
+</pre>
+<h3>Go to Backoffice:</h3>
+<h5>Types-&gt;Type “Student” in text box and click on search:</h5>
+<p><img fetchpriority="high" decoding="async" class="alignnone wp-image-2146 size-full" src="/wp-content/uploads/2024/04/H2.1.png" alt="" width="882" height="649" srcset="/wp-content/uploads/2024/04/H2.1.png 882w, /wp-content/uploads/2024/04/H2.1-300x221.png 300w, /wp-content/uploads/2024/04/H2.1-768x565.png 768w" sizes="(max-width: 882px) 100vw, 882px" /></p>
+<p>In the above image click on the highlighted symbol to open the type and show its records, and using this screen we can add the values for <span class="abc">studentID, studentFirstName and studentLastName,</span> edit , update or delete the records. Here we can observe that the below image there is additional symbol for the <span class="abc">studentLastName</span> it indicates that the attribute is localized and, When I click the below highlighted symbol we can see the text boxes for different languages. We can add the text for different languages and for the <span class="abc">studentID, studentFirstName</span> there is no symbol it means that attribute is not be localized.</p>
+<p><img decoding="async" class="alignnone wp-image-2148 size-full" src="/wp-content/uploads/2024/04/H2.2.png" alt="" width="1104" height="635" srcset="/wp-content/uploads/2024/04/H2.2.png 1104w, /wp-content/uploads/2024/04/H2.2-300x173.png 300w, /wp-content/uploads/2024/04/H2.2-1024x589.png 1024w, /wp-content/uploads/2024/04/H2.2-768x442.png 768w" sizes="(max-width: 1104px) 100vw, 1104px" /></p>
+<p>&nbsp;</p>
+<h4>Open the HAC and write the query to get the data:</h4>
+<p><b>Select * from {Student}</b></p>
+<p><img decoding="async" class="alignnone wp-image-2149 size-full" src="/wp-content/uploads/2024/04/H2.3.png" alt="" width="1108" height="565" srcset="/wp-content/uploads/2024/04/H2.3.png 1108w, /wp-content/uploads/2024/04/H2.3-300x153.png 300w, /wp-content/uploads/2024/04/H2.3-1024x522.png 1024w, /wp-content/uploads/2024/04/H2.3-768x392.png 768w" sizes="(max-width: 1108px) 100vw, 1108px" /></p>
+<p><b>Click on Execute we can see the results in Search result tab.</b></p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2153 size-full" src="/wp-content/uploads/2024/04/H2.4.png" alt="" width="1111" height="386" srcset="/wp-content/uploads/2024/04/H2.4.png 1111w, /wp-content/uploads/2024/04/H2.4-300x104.png 300w, /wp-content/uploads/2024/04/H2.4-1024x356.png 1024w, /wp-content/uploads/2024/04/H2.4-768x267.png 768w" sizes="(max-width: 1111px) 100vw, 1111px" /></p>
+<p>Here we can observe that two attributes are displayed here that is <span class="abc">studentID, studentFirstName</span> and not attribute which is localized that is <span class="abc">studentLastName</span>. If I want see the <span class="abc">studentLastName</span> details then go to SQL Query Tab and write the query:</p>
+<p><b>Select * from StudentDetailsl</b></p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2157 size-full" src="/wp-content/uploads/2024/04/H2.5.png" alt="" width="1116" height="424" srcset="/wp-content/uploads/2024/04/H2.5.png 1116w, /wp-content/uploads/2024/04/H2.5-300x114.png 300w, /wp-content/uploads/2024/04/H2.5-1024x389.png 1024w, /wp-content/uploads/2024/04/H2.5-768x292.png 768w" sizes="(max-width: 1116px) 100vw, 1116px" /></p>
+<p><b>Click on Execute we can see the results in Search result tab.</b></p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2158 size-full" src="/wp-content/uploads/2024/04/H2.6.png" alt="" width="1080" height="316" srcset="/wp-content/uploads/2024/04/H2.6.png 1080w, /wp-content/uploads/2024/04/H2.6-300x88.png 300w, /wp-content/uploads/2024/04/H2.6-1024x300.png 1024w, /wp-content/uploads/2024/04/H2.6-768x225.png 768w" sizes="(max-width: 1080px) 100vw, 1080px" /></p>
+<p>If we want to see both the attributes information in single query by then we need to write the same using the <span class="abc">JOIN</span> operation and it is written in SQL Query Tab.</p>
+<p><b>Select s.P_STUDENTID, s.P_STUDENTFIRSTNAME, sd.P_STUDENTLASTNAME From StudentDetails as s JOIN StudentDetailslp as sd ON s.PK = sd.ITEMPK</b></p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2159 size-full" src="/wp-content/uploads/2024/04/H2.7.png" alt="" width="1103" height="416" srcset="/wp-content/uploads/2024/04/H2.7.png 1103w, /wp-content/uploads/2024/04/H2.7-300x113.png 300w, /wp-content/uploads/2024/04/H2.7-1024x386.png 1024w, /wp-content/uploads/2024/04/H2.7-768x290.png 768w" sizes="(max-width: 1103px) 100vw, 1103px" /></p>
+<p><b>Click on Execute we can see the results in Search result Tab.</b></p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2160 size-full" src="/wp-content/uploads/2024/04/H2.8.png" alt="" width="1109" height="282" srcset="/wp-content/uploads/2024/04/H2.8.png 1109w, /wp-content/uploads/2024/04/H2.8-300x76.png 300w, /wp-content/uploads/2024/04/H2.8-1024x260.png 1024w, /wp-content/uploads/2024/04/H2.8-768x195.png 768w" sizes="(max-width: 1109px) 100vw, 1109px" /></p>
+<h3>Implementation 2:</h3>
+<h5>Add a new localized attribute in product itemtype and display the same on storefront.</h5>
+<h4>Steps for Implementation 2:</h4>
+<h5>1. Add a new localized attribute in product itemtype in *core-items.xml file.</h5>
+<pre></pre>
+<p>After performing the above step do ant all (the corresponding setter and getter methods created in ProductModel) and start the server and, do the system update (the corresponding attribute will be created in product table).</p>
+<h5>2. Add the new attribute entry in ProductData in *façades-beans.xml file.</h5>
+<pre></pre>
+<p>After performing the above step do ant all it will add new attribute in existing ProductData data class.</p>
+<h5>3. Create the populator.</h5>
+<pre></pre>
+<h5>4. Create a bean for the populator created in step 3 and add it the ProductConverter’s populator list be adding below in *facades-spring.xml file.</h5>
+<pre>	
+</pre>
+<h5>5. For display purpose in storefront we need to add the attribute in jsp file that is productDetailsPanel.tag</h5>
+<pre>	
+</pre>
+<h5>6. Go to Backoffice and add the values for that attribute in different languages.</h5>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2161 size-full" src="/wp-content/uploads/2024/04/H2.9.png" alt="" width="1346" height="650" srcset="/wp-content/uploads/2024/04/H2.9.png 1346w, /wp-content/uploads/2024/04/H2.9-300x145.png 300w, /wp-content/uploads/2024/04/H2.9-1024x495.png 1024w, /wp-content/uploads/2024/04/H2.9-768x371.png 768w" sizes="(max-width: 1346px) 100vw, 1346px" /> <img loading="lazy" decoding="async" class="alignnone wp-image-2162 size-full" src="/wp-content/uploads/2024/04/H2.10.png" alt="" width="1285" height="666" srcset="/wp-content/uploads/2024/04/H2.10.png 1285w, /wp-content/uploads/2024/04/H2.10-300x155.png 300w, /wp-content/uploads/2024/04/H2.10-1024x531.png 1024w, /wp-content/uploads/2024/04/H2.10-768x398.png 768w" sizes="(max-width: 1285px) 100vw, 1285px" /></p>
+<h4>Outputs:</h4>
+<h5>Output: English language.</h5>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2163 size-full" src="/wp-content/uploads/2024/04/H2.11.png" alt="" width="1346" height="644" srcset="/wp-content/uploads/2024/04/H2.11.png 1346w, /wp-content/uploads/2024/04/H2.11-300x144.png 300w, /wp-content/uploads/2024/04/H2.11-1024x490.png 1024w, /wp-content/uploads/2024/04/H2.11-768x367.png 768w" sizes="(max-width: 1346px) 100vw, 1346px" /></p>
+<h5>Output: German language.</h5>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2164 size-full" src="/wp-content/uploads/2024/04/H2.12.png" alt="" width="1328" height="626" srcset="/wp-content/uploads/2024/04/H2.12.png 1328w, /wp-content/uploads/2024/04/H2.12-300x141.png 300w, /wp-content/uploads/2024/04/H2.12-1024x483.png 1024w, /wp-content/uploads/2024/04/H2.12-768x362.png 768w" sizes="(max-width: 1328px) 100vw, 1328px" /></p>
+<h5>Output: Japanese language.</h5>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2165 size-full" src="/wp-content/uploads/2024/04/H2.13.png" alt="" width="1342" height="628" srcset="/wp-content/uploads/2024/04/H2.13.png 1342w, /wp-content/uploads/2024/04/H2.13-300x140.png 300w, /wp-content/uploads/2024/04/H2.13-1024x479.png 1024w, /wp-content/uploads/2024/04/H2.13-768x359.png 768w" sizes="(max-width: 1342px) 100vw, 1342px" /></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/2024/04/19/localization-and-lp-table-in-sap-commerce/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Catalog Aware Itemtype in SAP Commerce</title>
+		<link>/2024/04/19/catalog-aware-itemtype-in-sap-commerce/</link>
+					<comments>/2024/04/19/catalog-aware-itemtype-in-sap-commerce/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Fri, 19 Apr 2024 06:18:12 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[SAP Commerce]]></category>
+		<guid isPermaLink="false">/?p=2091</guid>
+
+					<description><![CDATA[The items that should take part in the synchronization process like Product, CMS Pages, and Components etc. are called Catalog Aware. [&#8230;]]]></description>
+										<content:encoded><![CDATA[<div class="mainheading"></div>
+<div class="article-post">
+<p>The items that should take part in the synchronization process like Product, CMS Pages, and Components etc. are called <b>Catalog Aware.</b></p>
+<p>The items which do (or should) not take part in synchronization process are called <b>Catalog Unaware.</b></p>
+<p>Sometimes, it is required to define our <b>custom item types</b> as <b>Catalog aware item</b> types in order to make them eligible for <b>synchronization.</b></p>
+<p>It means we need to associate these custom item types with a <b>catalog</b> (content or product).</p>
+<p>We can achieve this either in <b>HMC/Backoffice</b> or by defining required attributes in items.xml file.</p>
+<h1>Steps for creating the Catalog Aware item:-</h1>
+<p class="abc">Step1:Enable item type as catalog item type, using custom property catalogItemType.</p>
+<p class="abc">Step2: Define the attribute catalogVersionAttributeQualifier with value same as qualifier of catalogversion attribute in the same item type.</p>
+<p class="abc">Step3:Define the attribute uniqueKeyAttributeQualifier with value same as qualifier of unique attribute in the same item type and if there are multiple unique attributes then separate them by comma.</p>
+<h5>So with these steps, new item type definition in items.xml will be as below.</h5>
+<pre></pre>
+<p class="abc">After the above step do ant all (the corresponding model class will be generated) and start the server and do the system update (the corresponding table will be created in database).</p>
+<p class="abc">After that above item type is synchronizable which means source content of this item type will be copied to target automatically when we do synchronization.</p>
+<p class="abc">Now, there are some entities which should have two copies in the system, so that Business users (like content managers or product managers) can make appropriate changes to make it look suitable on the website before it actually appears there. E.g. &#8211; Product, Images etc.</p>
+<p class="abc">But there are certain items which need not to have to copies of them, E.g. &#8211; Price, Stock etc. because they would be same for both copies of the item (Product in this case) and creating another copy would be an overhead on the system.</p>
+<pre></pre>
+<p class="abc">After the above step do ant all (the corresponding attribute will be generated in the ProductModel) and start the server and do the system update (the corresponding column will be created in Product table).</p>
+<h3>Go to Backoffice:-</h3>
+<h5>Types -&gt;Type “Product” in text box and click on search:</h5>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2094 size-full" src="/wp-content/uploads/2024/04/CAware11.png" alt="" width="979" height="562" srcset="/wp-content/uploads/2024/04/CAware11.png 979w, /wp-content/uploads/2024/04/CAware11-300x172.png 300w, /wp-content/uploads/2024/04/CAware11-768x441.png 768w" sizes="(max-width: 979px) 100vw, 979px" /></p>
+<h5>Click on the above highlighted symbol you will see the list of Products</h5>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2095 size-full" src="/wp-content/uploads/2024/04/CatalogAware2.png" alt="" width="979" height="562" srcset="/wp-content/uploads/2024/04/CatalogAware2.png 979w, /wp-content/uploads/2024/04/CatalogAware2-300x172.png 300w, /wp-content/uploads/2024/04/CatalogAware2-768x441.png 768w" sizes="(max-width: 979px) 100vw, 979px" /></p>
+<h5>Search with the product id 358639 and select the staged version and in that go to the Administration tab you can see the customDescription attribute:</h5>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2098 size-full" src="/wp-content/uploads/2024/04/CatalogAware3.png" alt="" width="979" height="562" srcset="/wp-content/uploads/2024/04/CatalogAware3.png 979w, /wp-content/uploads/2024/04/CatalogAware3-300x172.png 300w, /wp-content/uploads/2024/04/CatalogAware3-768x441.png 768w" sizes="(max-width: 979px) 100vw, 979px" /></p>
+<h5>You can observe that there is no value for the customDescription attribute and we need to provide some value and click on save button after that click on sync option symbol once the synchronization is done then that attribute value is automatically reflected in online version. Why because that customDescription attribute itself catalog aware.</h5>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2099 size-full" src="/wp-content/uploads/2024/04/CatalogAware4.png" alt="" width="979" height="562" srcset="/wp-content/uploads/2024/04/CatalogAware4.png 979w, /wp-content/uploads/2024/04/CatalogAware4-300x172.png 300w, /wp-content/uploads/2024/04/CatalogAware4-768x441.png 768w" sizes="(max-width: 979px) 100vw, 979px" /></p>
+<h5>Now select the online version and see the value of customDescription attribute.</h5>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2100 size-full" src="/wp-content/uploads/2024/04/CatalogAware5.png" alt="" width="979" height="562" srcset="/wp-content/uploads/2024/04/CatalogAware5.png 979w, /wp-content/uploads/2024/04/CatalogAware5-300x172.png 300w, /wp-content/uploads/2024/04/CatalogAware5-768x441.png 768w" sizes="(max-width: 979px) 100vw, 979px" /></p>
+</div>
+]]></content:encoded>
+					
+					<wfw:commentRss>/2024/04/19/catalog-aware-itemtype-in-sap-commerce/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Dynamic Attribute in SAP Commerce</title>
+		<link>/2024/04/12/dynamic-attribute-in-sap-commerce/</link>
+					<comments>/2024/04/12/dynamic-attribute-in-sap-commerce/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Fri, 12 Apr 2024 09:44:18 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[SAP Commerce]]></category>
+		<guid isPermaLink="false">/?p=1327</guid>
+
+					<description><![CDATA[Dynamic attributes allow you to add custom attributes to your model without modifying the model class itself. They enable you [&#8230;]]]></description>
+										<content:encoded><![CDATA[<div class="article-post">
+<p>Dynamic attributes allow you to add custom attributes to your model without modifying the model class itself. They enable you to create custom logic for these attributes, which is not present in the standard model class. Dynamic attributes serve as transient data, meaning they are not stored in the database.</p>
+<p><span class="abc">When we define an <b>attribute</b> for an <b>item type,</b> it comes with a tag called <b>&#8220;persistence type&#8221;.</b></span><br />
+<span class="abc">If the persistence type is <b>set to &#8220;property&#8221;</b></span><br />
+<span class="abc">A corresponding column is created in the database.<br />
+Values assigned to this attribute will be stored in the database.<br />
+This type of attribute is called a &#8220;persistence attribute&#8221; because its values persist in the database.</span></p>
+<p><span class="abc">If the persistence type is <b>set to &#8220;dynamic&#8221;</b></span><br />
+<span class="abc">No column is created in the database.<br />
+Values assigned to this attribute will not be stored in the database.<br />
+This type of attribute is called a &#8220;non-persistent&#8221; or &#8220;dynamic&#8221; attribute because its values are not persisted in the database.</span></p>
+<p>For every dynamic attribute we define, we need to specify the attribute handler. If we don&#8217;t specify it, a Bean Id will be generated automatically. In such cases, we must use the generated Bean Id when defining the Spring bean in XML.</p>
+<p>The attribute handler is implemented using Spring. Therefore, we need to specify the Spring bean Id for the attribute handler. After that, we define a class for that Spring bean Id which provides the custom logic for the dynamic attribute. This class contains the logic for how the dynamic attribute behaves and is responsible for handling its behavior.</p>
+<h3>Example:</h3>
+<h4>Step-1:-</h4>
+<p>Define a new attributes in existing item type.<br />
+D:\Hybris2205SPA\hybris\bin\custom\clavrit\clavritcore\resources\clavritcore-items.xml</p>
+<pre>	
+</pre>
+<h4>Step-2:-</h4>
+<p>Create DynamicAttributeHandler class for handeling the newly created custom dynamic attribute.<br />
+D:\Hybris2205SPA\hybris\bin\custom\clavrit\clavritcore\src\com\clavrit\core\dynamic\DayBeforExpiryHandler.java</p>
+<pre>package com.clavrit.core.dynamic;
+
+import de.hybris.platform.servicelayer.model.attribute.DynamicAttributeHandler;
+import de.hybris.platform.voucher.model.VoucherModel;
+
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.ZoneId;
+import java.util.Date;
+
+public class DayBeforExpiryHandler implements DynamicAttributeHandler&lt;string, vouchermodel=""&gt; {
+    final public static String EXPIRY_MSG_DATE_NOT_AVAIALBLE = "Expiry data is not Available";
+    final public static String VOUCHER_EXPIRED = "Voucher Expired";
+    final public static String MONTHS = "Months :";
+    final public static String DAYS = "Days :";
+    final public static String DAY = "Day :";
+    final public static String COMMA = ", ";
+
+
+    @Override
+    public String get(VoucherModel voucherModel) {
+        Date eDate = voucherModel.getEndtDate();
+        if (eDate == null) {
+          return EXPIRY_MSG_DATE_NOT_AVAIALBLE;
+        }
+        LocalDate expiryDate = eDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        LocalDate currentDate = LocalDate.now();
+        return currentDate.isBefore(expiryDate) ? getMessage(expiryDate,currentDate) : VOUCHER_EXPIRED ;
+    }
+
+    @Override
+    public void set(VoucherModel model, String s) {
+
+    }
+
+    private String getMessage( LocalDate expiryDate , LocalDate currentDate){
+
+        Period period = Period.between(currentDate, expiryDate);
+        int daysLeft = period.getDays();
+        int monthsLeft = period.getMonths();
+        if(monthsLeft!=0){
+            return MONTHS + monthsLeft + COMMA + DAYS + daysLeft;
+        }
+        return  daysLeft==1 ? DAY + daysLeft :DAYS + daysLeft;
+    }
+}
+
+&lt;/string,&gt;</pre>
+<h4>Step-3:-</h4>
+<p>Define bean inside clavritcore-spring.xml.<br />
+D:\Hybris2205SPA\hybris\bin\custom\clavrit\clavritcore\resources\clavritcore-spring.xml</p>
+<pre>    
+</pre>
+<h4>Note:</h4>
+<p>Bean id should be same as attributeHandler mentioned in items.xml.</p>
+<h4>Step-4:-</h4>
+<p>Perform build and then update the system using HAC Or CMD</p>
+<h4>Step-5:-</h4>
+<p>Now we can check inside backoffice as I have shown below<br />
+Now set endDate in my case its is 03 April and currentDate is 02 April, we can see bellow</p>
+<p><img decoding="async" class=" img-fluid" src="https://clavrit.com/img/blog/dynamic%20attribute/backoffice1.png" alt="" width="75%" /><br />
+We can see 1 day left to expire<br />
+If it&#8217;s been more than a day, then it will show as one day.</p>
+<p><img decoding="async" class=" img-fluid" src="https://clavrit.com/img/blog/dynamic%20attribute/backoffice2.png" alt="" width="75%" /><br />
+If the expiry date exceeds 30 days, it will be changed to a month.</p>
+<p><img decoding="async" class=" img-fluid" src="https://clavrit.com/img/blog/dynamic%20attribute/backoffice3.png" alt="" width="75%" /><br />
+The code displays an expired message when it passes the set expiration date.</p>
+<p><img decoding="async" class=" img-fluid" src="https://clavrit.com/img/blog/dynamic%20attribute/backoffice4.png" alt="" width="75%" /></p>
+<p><img decoding="async" class=" img-fluid" src="https://clavrit.com/img/blog/dynamic%20attribute/backoffice5.png" alt="" width="75%" /></p>
+</div>
+]]></content:encoded>
+					
+					<wfw:commentRss>/2024/04/12/dynamic-attribute-in-sap-commerce/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Classification Systems in SAP Commerce</title>
+		<link>/2024/04/12/classification-systems-in-sap-commerce/</link>
+					<comments>/2024/04/12/classification-systems-in-sap-commerce/#respond</comments>
+		
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<pubDate>Fri, 12 Apr 2024 09:27:27 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[SAP Commerce]]></category>
+		<guid isPermaLink="false">/?p=1302</guid>
+
+					<description><![CDATA[In Hybris, we have two main systems: the Product Catalog system and the Classification system. The Product Catalog organizes categories [&#8230;]]]></description>
+										<content:encoded><![CDATA[<div class="article-post">
+<p>In Hybris, we have two main systems: the Product Catalog system and the Classification system. The Product Catalog organizes categories and products in a structured way. Similarly, the Classification system also arranges categories hierarchically, and these are known as classifying categories. We use classifying categories in the Classification system to assign what we call category features, or classification attributes, to products or product categories within the Product catalog.</p>
+<p>Now, let&#8217;s simplify things with an example requirement:<br />
+<span class="abc">Requirement:</span> Imagine we have products in our catalog where some require a *custom attribute, while others do not.<br />
+Here&#8217;s how we can handle this using the Classification system:<br />
+<span class="abc">Define a New Classification Attribute:</span> First, we create a new classification attribute or category feature, let&#8217;s call it &#8220;customAttribute.&#8221;<br />
+<span class="abc">Assign the Attribute:</span> Then we assign this classification attribute only to the products or categories that need it in our product catalog.<br />
+<span class="abc">Attribute Value Handling:</span> The actual value of the customAttribute is not stored within the Classification system. Instead, it&#8217;s kept with the respective product in the product catalog. This means it&#8217;s displayed just like any other product attribute.<br />
+<span class="abc">Dynamic Attribute Addition:</span> With this approach, the customAttribute exists only when we assign the &#8220;customAttribute category feature&#8221; to a product or product category. It allows for dynamic addition of product attributes at runtime, and we avoid cluttering all products with unnecessary attributes.</p>
+<h4>When to Prefer the Classification System: :</h4>
+<p><span class="abc">Selective Product Attributes:</span>When we need to define attributes for only certain products rather than for all.<br />
+<span class="abc">Uncertain Attribute Lifespan::</span> When we&#8217;re unsure about how long an attribute will be needed, and it might become unnecessary after a period.<br />
+<span class="abc">Dynamic Attribute Addition::</span> When we need to add product attributes dynamically during runtime, especially when dealing with changing requirements.<br />
+In essence, the Classification system provides flexibility in managing product attributes, allowing us to tailor attributes to specific products or categories, adapt to changing needs, and avoid unnecessary clutter in our catalog.</p>
+<p>&nbsp;</p>
+<h3>Example:</h3>
+<p>$productCatalog=electronicsProductCatalog $productCatalogName=Electronics Product Catalog<br />
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default=&#8217;Online&#8217;])[unique=true,default=$productCatalog:Online]<br />
+$classCatalogVersion=catalogversion(catalog(id[default=&#8217;ElectronicsClassification&#8217;]),version[default=&#8217;1.0&#8242;])[unique=true,default=&#8217;ElectronicsClassification:1.0&#8242;]<br />
+$classSystemVersion=systemVersion(catalog(id[default=&#8217;ElectronicsClassification&#8217;]),version[default=&#8217;1.0&#8242;])[unique=true]<br />
+$class=classificationClass(ClassificationClass.code,$classCatalogVersion)[unique=true]<br />
+$supercategories=source(code, $classCatalogVersion)[unique=true]<br />
+$categories=target(code, $catalogVersion)[unique=true]<br />
+$attribute=classificationAttribute(code,$classSystemVersion)[unique=true]<br />
+$unit=unit(code,$classSystemVersion)<br />
+$lang=en</p>
+<p>1.Create a Classification Class, also known as a section, in which the Classification attribute will be displayed. Here, you need to provide the Classification Class Code and Name.<br />
+For Example: Code =clavritClassificationClass, Name = Clavrit Classification Class<br />
+# Insert Classifications<br />
+<span class="abc">INSERT_UPDATE ClassificationClass; code[unique = true]; name[lang = $lang]; $classCatalogVersion; allowedPrincipals(uid)[default = &#8216;customergroup&#8217;] ; clavritClassificationClass ; Clavrit Classification Class</span></p>
+<p>2.Create a Classification Attribute, which will be displayed in the Attributes tab in the backoffice.<br />
+For Example Code= clavritAttribute, Name=: Clavrit Attribute<br />
+# Insert Classification Attributes<br />
+<span class="abc">INSERT_UPDATE ClassificationAttribute; code[unique = true]; name[lang = $lang]; $classSystemVersion; ;clavritAttribute ; Clavrit Attribute</span></p>
+<p>3.Define the many-to-many relation between categories, where the source, i.e., supercategories, will be the classification class code, and the target, i.e., categories, will be the name of the category.<br />
+# Links ClassificationClasses to Categories<br />
+<span class="abc">INSERT_UPDATE CategoryCategoryRelation;$categories;$supercategories ;brand_745 ;clavritClassificationClass</span></p>
+<p>4. Create the ClassificationAttributeAssignment which basically maps the Classification class with the classification attribute and position.<br />
+<span class="abc">INSERT_UPDATE ClassAttributeAssignment; $class; $attribute; position;attributeValues(code, $classSystemVersion); range[default = false]; $unit; listable[default = true]; localized[default = true] ; clavritClassificationClass ; clavritAttribute ; 1 ;</span></p>
+<p>After successfully importing, go inside the backoffice, click on &#8220;Products,&#8221; and add a category.</p>
+<p>&nbsp;</p>
+<div><img decoding="async" class=" img-fluid" src="https://clavrit.com/img/blog/Hybris-Blog1/H1.1.png" alt="" width="100%" /> <img decoding="async" class=" img-fluid" src="https://clavrit.com/img/blog/Hybris-Blog1/H1.2.png" alt="" width="100%" /><br />
+After that we can see inside the attributes<img decoding="async" class=" img-fluid" src="https://clavrit.com/img/blog/Hybris-Blog1/H1.3.png" alt="" width="100%" /></p>
+<div>
+<p>5.Map the Product with Classification class : $productCatalog=electronicsProductCatalog $productCatalogName=Electronics Product Catalog $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default=&#8217;Online&#8217;])[unique=true,default=$productCatalog:Online] $clAttrModifiers=system=&#8217;ElectronicsClassification&#8217;,version=&#8217;1.0&#8242;,translator=de.hybris.platform.catalog.jalo.classification.impex.ClassificationAttributeTranslator,lang=en $clavritAttribute = @clavritAttribute[$clAttrModifiers]; <span class="abc">INSERT_UPDATE Product; pk[unique = true]; $clavritAttribute ; 8796221046785 ; Clavrit Test Value</span></p>
+</div>
+<p><img decoding="async" class=" img-fluid" src="https://clavrit.com/img/blog/Hybris-Blog1/H1.4.png" alt="" width="100%" /><br />
+After success we can see the value.</p>
+<p><img decoding="async" class=" img-fluid" src="https://clavrit.com/img/blog/Hybris-Blog1/H1.5.png" alt="" width="100%" /></p>
+<h4>to Fetch a particular classification Attribute:</h4>
+<p>DB Table Name = <span class="abc">classificationattribute</span> select * from {classificationattribute} where {code}=&#8217;clavritAttribute&#8217;</p>
+<p><img decoding="async" class=" img-fluid" src="https://clavrit.com/img/blog/Hybris-Blog1/H1.6.png" alt="" width="100%" /> <img decoding="async" class=" img-fluid" src="https://clavrit.com/img/blog/Hybris-Blog1/H1.7.png" alt="" width="100%" /> </p>
+<h4>to Fetch the value of a particular Classification Attribute:</h4>
+<p>DB Table Name = <span class="abc">productfeatures</span> SELECT * FROM productfeatures order by CREATEDTS desc <img decoding="async" class=" img-fluid" src="https://clavrit.com/img/blog/Hybris-Blog1/H1.8.png" alt="" width="100%" /> <img decoding="async" class=" img-fluid" src="https://clavrit.com/img/blog/Hybris-Blog1/H1.9.png" alt="" width="100%" /></p>
+</div>
+</div>
+<div class="after-post-tags">
+<ul class="tags">
+<li>Design</li>
+<li>Growth Mindset</li>
+<li>Productivity</li>
+<li>Personal Growth</li>
+</ul>
+</div>
+]]></content:encoded>
+					
+					<wfw:commentRss>/2024/04/12/classification-systems-in-sap-commerce/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>
